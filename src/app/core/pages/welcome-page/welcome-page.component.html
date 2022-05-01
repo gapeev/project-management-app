@@ -1,0 +1,3 @@
+<p>welcome-page works!</p>
+<button mat-stroked-button *ngIf="isUserAuth | async" (click)="signOut()">Logout</button>
+<button mat-stroked-button *ngIf="isUserAuth | async" (click)="deleteUser()">Delete</button>
