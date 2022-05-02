@@ -10,4 +10,5 @@ import { SharedModule } from '@shared/shared.module';
   declarations: [SignInPageComponent, SignUpPageComponent],
   imports: [CommonModule, SharedModule, AuthRoutingModule],
 })
+
 export class AuthModule {}
