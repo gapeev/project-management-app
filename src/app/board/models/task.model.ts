@@ -1,4 +1,4 @@
-export class TaskModel implements Partial<ITask> {
+export class TaskModel implements ITask {
   constructor(
     public id: number = 0,
     public action: string = '',
@@ -13,10 +13,10 @@ export class TaskModel implements Partial<ITask> {
 }
 
 export interface ITask {
-  id: number;
-  action: string;
-  priority: number;
-  eatHours: number;
-  actHours: number;
-  done: boolean;
+  id?: number;
+  action?: string;
+  priority?: number;
+  eatHours?: number;
+  actHours?: number;
+  done?: boolean;
 }
