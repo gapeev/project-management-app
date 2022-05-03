@@ -1,4 +1,4 @@
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BoardRoutingModule } from './board-routing.module';
 import { BoardMainComponent } from './components/board-main/board-main.component';
@@ -14,4 +14,6 @@ import { MatCardModule } from "@angular/material/card";
   bootstrap: [BoardMainComponent]
 })
 
-export class BoardModule {}
+export class BoardModule {
+
+}

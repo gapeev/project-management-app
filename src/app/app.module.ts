@@ -9,8 +9,7 @@ import { BoardModule } from "./board/board.module";
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BoardModule, CoreModule, AuthModule,
-    SharedModule],
+  imports: [BrowserModule, AppRoutingModule, BoardModule, CoreModule, AuthModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })
