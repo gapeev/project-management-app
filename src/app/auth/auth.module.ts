@@ -7,4 +7,7 @@ import { AuthRoutingModule } from './auth-routing.module';
   declarations: [],
   imports: [CommonModule, AuthRoutingModule],
 })
+
 export class AuthModule {}
+
+
