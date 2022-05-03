@@ -1,0 +1,39 @@
+.footer {
+  padding: 1% 4%;
+  justify-content: space-between;
+  align-items: center;
+  &__authors {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    &__link {
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s;
+      width: fit-content;
+      &:hover {
+        filter: invert(1);
+      }
+    }
+  }
+  &__year {
+    font-size: 1.5rem;
+  }
+  &__logo {
+    width: 33%;
+    height: 100%;
+    background-image: url(../../../../assets/svg/logo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: right;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
