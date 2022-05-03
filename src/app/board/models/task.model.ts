@@ -1,4 +1,4 @@
-export class TaskModel implements ITask {
+export class TaskModel implements Task {
   constructor(
     public id: number = 0,
     public action: string = '',
@@ -12,7 +12,7 @@ export class TaskModel implements ITask {
   }
 }
 
-export interface ITask {
+export interface Task {
   id?: number;
   action?: string;
   priority?: number;
