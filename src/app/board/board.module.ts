@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { BoardRoutingModule } from './board-routing.module';
 import { BoardMainComponent } from './components/board-main/board-main.component';
 import { TaskComponent } from './components/task/task.component';
@@ -11,5 +10,9 @@ import { TaskComponent } from './components/task/task.component';
     TaskComponent
   ],
   imports: [CommonModule, BoardRoutingModule],
+  providers: [],
+  schemas: [],
+  bootstrap: []
 })
+
 export class BoardModule {}
