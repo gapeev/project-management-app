@@ -1,4 +1,11 @@
+:host {
+  position: sticky;
+  top: 0;
+}
 .header {
   padding: 1% 4%;
   justify-content: space-between;
+  &.scrolled {
+    background: #30396b;
+  }
 }
