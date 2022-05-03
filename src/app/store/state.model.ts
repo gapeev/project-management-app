@@ -1,1 +1,5 @@
-export interface State {}
+import { TaskState } from "../board/store/state.model";
+
+export interface AppState {
+  taskState: TaskState;
+}
