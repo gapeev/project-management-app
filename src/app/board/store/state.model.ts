@@ -1,7 +1,7 @@
-import { ITask, TaskModel } from "../models/task.model";
+import { Task, TaskModel } from "../models/task.model";
 
 export interface TaskState {
-  tasks: ITask[];
+  tasks: Task[];
 }
 
 export const initialTaskState: TaskState = {
