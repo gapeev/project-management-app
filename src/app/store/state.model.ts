@@ -4,5 +4,4 @@ export interface AppState {
   taskState: TaskState;
 }
 
-export class State {
-}
+export class State {}

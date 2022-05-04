@@ -14,6 +14,4 @@ import { MatCardModule } from "@angular/material/card";
   bootstrap: [BoardMainComponent]
 })
 
-export class BoardModule {
-
-}
+export class BoardModule {}
