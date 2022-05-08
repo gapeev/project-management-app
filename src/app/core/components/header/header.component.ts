@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ export class HeaderComponent implements OnInit {
   isPageScrolled = false;
   headerClassList: string[] = ['header'];
 
-  constructor() {}
+  constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
     window.addEventListener('scroll', () => {
@@ -19,11 +20,15 @@ export class HeaderComponent implements OnInit {
       } else {
         if (this.headerClassList.includes('scrolled')) this.headerClassList.pop();
       }
-      console.log(this.headerClassList);
     });
   }
 
   getLang() {
     return this.isLangToggle ? 'RU' : 'EN';
+  }
+
+  handleChange() {
+    const lang = this.isLangToggle ? 'ru' : 'en';
+    this.translate.use(lang);
   }
 }
