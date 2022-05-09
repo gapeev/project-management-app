@@ -1,0 +1,27 @@
+<h1 class="title" mat-dialog-title>
+  <mat-icon class="icon" aria-hidden="false" aria-label="add circle icon">add_circle</mat-icon>
+  Create Board
+</h1>
+<div mat-dialog-content>
+  <form #ngForm="ngForm" [formGroup]="createBoardForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input type="text" matInput formControlName="title" />
+      <mat-error *ngIf="title?.hasError('required')">Title is <strong>required</strong></mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input type="text" matInput formControlName="description" />
+      <mat-error *ngIf="description?.hasError('required')">
+        Description is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div class="actions" mat-dialog-actions>
+  <button mat-flat-button color="primary" (click)="onCreateClick()" [disabled]="ngForm.invalid">
+    Create
+  </button>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+</div>
