@@ -1,0 +1,25 @@
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  color: #3f51b5;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.attachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+}
