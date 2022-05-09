@@ -1,0 +1,9 @@
+<header>
+  <mat-toolbar color="primary" [ngClass]="headerClassList">
+    <span class="logo">PMA</span>
+    <button mat-raised-button>create new board</button>
+    <button mat-raised-button>logout</button>
+    <button mat-raised-button>edit profile</button>
+    <mat-slide-toggle [(ngModel)]="isLangToggle">{{ getLang() }}</mat-slide-toggle>
+  </mat-toolbar>
+</header>
