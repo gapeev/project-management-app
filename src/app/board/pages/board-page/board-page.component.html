@@ -1,0 +1,44 @@
+<mat-progress-bar *ngIf="isPending | async" mode="indeterminate"></mat-progress-bar>
+<app-notification (confirm)="onErrorConfirm()"></app-notification>
+<button mat-raised-button (click)="createColumn()">Create column</button>
+<div *ngIf="board$ | async as board">
+  <div
+    class="columns"
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    cdkDropListGroup
+    (cdkDropListDropped)="dropColumn($event)"
+  >
+    <div class="column" cdkDrag *ngFor="let column of board.columns | orderBy: 'order'">
+      <div class="title">
+        <!-- <h3>{{ column.title }}</h3> -->
+        <app-editable-title
+          [content]="column.title"
+          (save)="updateColumn(board.id, column)($event)"
+        ></app-editable-title>
+        <button mat-stroked-button type="button" (click)="deleteColumn(column.id, column.title)">
+          del
+        </button>
+      </div>
+      <div
+        class="tasks"
+        [attr.data-board-id]="board.id"
+        [attr.data-column-id]="column.id"
+        cdkDropList
+        (cdkDropListDropped)="dropTask($event)"
+      >
+        <div class="task" cdkDrag *ngFor="let task of column.tasks | orderBy: 'order'">
+          <p (click)="selectTask(column.id, task)">{{ task.title }}</p>
+          <button
+            mat-stroked-button
+            type="button"
+            (click)="deleteTask(column.id, task.id, task.title)"
+          >
+            del
+          </button>
+        </div>
+      </div>
+      <button mat-raised-button type="button" (click)="createTask(column.id)">Create task</button>
+    </div>
+  </div>
+</div>
