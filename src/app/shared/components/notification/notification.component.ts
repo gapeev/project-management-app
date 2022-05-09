@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Subscription, take, tap } from 'rxjs';
+import { Subscription, tap } from 'rxjs';
 import { MatSnackBar, MatSnackBarRef, TextOnlySnackBar } from '@angular/material/snack-bar';
 import { clearErrorMessage } from '@store/actions/error.actions';
 import { selectError } from '@store/selectors/error.selectors';
@@ -28,7 +28,6 @@ export class NotificationComponent implements OnInit, OnDestroy {
           snackBarRef
             .onAction()
             .pipe(
-              take(1),
               tap(() => {
                 this.confirm.emit();
                 this.store.dispatch(clearErrorMessage());
