@@ -8,9 +8,8 @@ describe('EditableTitleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditableTitleComponent ]
-    })
-    .compileComponents();
+      declarations: [EditableTitleComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
