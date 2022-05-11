@@ -1,4 +1,3 @@
-<mat-progress-bar *ngIf="isPending | async" mode="indeterminate"></mat-progress-bar>
 <button mat-raised-button (click)="createBoard()">Create board</button>
 <div class="board" *ngFor="let board of boards$ | async">
   <a [routerLink]="['/boards', board.id]">{{ board.id }} | {{ board.title }}</a>

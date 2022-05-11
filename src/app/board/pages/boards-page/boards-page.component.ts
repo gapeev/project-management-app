@@ -21,10 +21,6 @@ export class BoardsPageComponent implements OnInit {
     this.store.dispatch(fetchBoards());
   }
 
-  public get isPending(): Observable<boolean> {
-    return this.store.select(selectIsBoardPending);
-  }
-
   public createBoard(): void {
     const dialogRef = this.dialog.open(CreateBoardComponent, {
       width: '400px',
