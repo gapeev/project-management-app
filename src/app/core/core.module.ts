@@ -11,6 +11,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
+import { LoadingBarComponent } from './components/loading-bar/loading-bar.component';
 import HttpInterceptors from './interceptors';
 import reducers from '@store/reducers';
 import { environment } from '../../environments/environment';
@@ -18,7 +19,7 @@ import UserEffects from '@store/effects/user.effects';
 import BoardEffects from '@store/effects/board.effects';
 
 @NgModule({
-  declarations: [WelcomePageComponent, FooterComponent, HeaderComponent],
+  declarations: [WelcomePageComponent, FooterComponent, HeaderComponent, LoadingBarComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -30,7 +31,7 @@ import BoardEffects from '@store/effects/board.effects';
     MaterialModule,
     FormsModule,
   ],
-  exports: [MaterialModule, FooterComponent, HeaderComponent],
+  exports: [MaterialModule, FooterComponent, HeaderComponent, LoadingBarComponent],
   providers: [HttpInterceptors],
 })
 export class CoreModule {}
