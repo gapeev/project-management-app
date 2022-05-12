@@ -7,10 +7,9 @@
     <form #ngForm="ngForm" [formGroup]="createColumnForm">
       <mat-form-field appearance="fill">
         <mat-label>Title</mat-label>
-        <input type="text" matInput formControlName="title" />
+        <input type="text" matInput formControlName="title">
         <mat-error *ngIf="title?.hasError('required')"
-          >Title is <strong>required</strong></mat-error
-        >
+          >Title is <strong>required</strong></mat-error>
       </mat-form-field>
     </form>
   </div>
@@ -19,8 +18,7 @@
       mat-flat-button
       color="primary"
       (click)="onCreateClick(board)"
-      [disabled]="ngForm.invalid"
-    >
+      [disabled]="ngForm.invalid">
       Create
     </button>
     <button mat-button (click)="onCancelClick()">Cancel</button>

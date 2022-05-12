@@ -1,0 +1,54 @@
+$font: Roboto, "Helvetica Neue", sans-serif;
+$primary: #3f51b5;
+
+.welcome-page {
+  display: flex;
+  &__container {
+    margin: 0 auto;
+    max-width: 1440px;
+    font-family: $font;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .greeting {
+      height: 30vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      h1 {
+        color: $primary;
+        font-weight: bold;
+        font-size: 4rem;
+        letter-spacing: 3px;
+        line-height: 4rem;
+      }
+      p {
+        margin: 0;
+        font-family: $font;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        background: linear-gradient(45deg, #0B2349 33%, #a14a8b 66%, #ff4081);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $primary;
+        display: table;
+      }
+      .registration-button {
+        background: $primary;
+        color: white;
+        font-family: $font;
+        font-size: 18px;
+        height: 45px;
+        width: 250px;
+      }
+      .registration-button:hover {
+        transition-duration: 1000ms;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, $primary 0%, $primary 35%, #a14a8b 100%);
+      }
+    }
+  }
+}
+
+

@@ -46,4 +46,5 @@ export class BoardsPageComponent implements OnInit {
   }
 
   constructor(private store: Store, private dialog: MatDialog) {}
+
 }

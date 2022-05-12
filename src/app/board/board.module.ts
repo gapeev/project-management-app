@@ -10,6 +10,19 @@ import { CreateColumnComponent } from './components/create-column/create-column.
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { UpdateTaskComponent } from './components/update-task/update-task.component';
 import { SearchTasksPageComponent } from './pages/search-tasks-page/search-tasks-page.component';
+import {MatButtonModule} from "@angular/material/button";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatIconModule} from "@angular/material/icon";
+import {DragDropModule} from "@angular/cdk/drag-drop";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -21,7 +34,7 @@ import { SearchTasksPageComponent } from './pages/search-tasks-page/search-tasks
     UpdateTaskComponent,
     SearchTasksPageComponent,
   ],
-  imports: [CommonModule, BoardRoutingModule, SharedModule],
+  imports: [CommonModule, BoardRoutingModule, SharedModule, MatButtonModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatOptionModule, MatSelectModule, MatCheckboxModule, MatIconModule, DragDropModule, MatProgressBarModule, MatTableModule, MatSortModule, MatPaginatorModule],
 })
 
 export class BoardModule {}

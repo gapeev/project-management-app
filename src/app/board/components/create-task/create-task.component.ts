@@ -13,9 +13,10 @@ import { BoardService } from '../../services/board.service';
 
 @Component({
   selector: 'app-create-task',
-  templateUrl: './create-task.component.html',
-  styleUrls: ['./create-task.component.scss'],
+  templateUrl: 'create-task.component.html',
+  styleUrls: ['create-task.component.scss'],
 })
+
 export class CreateTaskComponent implements OnInit {
   public createTaskForm!: FormGroup;
 
@@ -65,7 +66,6 @@ export class CreateTaskComponent implements OnInit {
       })
     );
   }
-
   constructor(
     private dialogRef: MatDialogRef<CreateTaskComponent>,
     @Inject(MAT_DIALOG_DATA) public data: CreateTaskData,
@@ -73,4 +73,5 @@ export class CreateTaskComponent implements OnInit {
     private formBuilder: FormBuilder,
     private boardService: BoardService
   ) {}
+
 }

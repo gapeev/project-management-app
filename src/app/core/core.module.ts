@@ -16,6 +16,9 @@ import reducers from '@store/reducers';
 import { environment } from '../../environments/environment';
 import UserEffects from '@store/effects/user.effects';
 import BoardEffects from '@store/effects/board.effects';
+import {MatButtonModule} from "@angular/material/button";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 @NgModule({
   declarations: [WelcomePageComponent, FooterComponent, HeaderComponent],
@@ -24,11 +27,14 @@ import BoardEffects from '@store/effects/board.effects';
     SharedModule,
     HttpClientModule,
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     EffectsModule.forRoot([UserEffects, BoardEffects]),
     StoreRouterConnectingModule.forRoot(),
     MaterialModule,
     FormsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSlideToggleModule,
   ],
   exports: [MaterialModule, FooterComponent, HeaderComponent],
   providers: [HttpInterceptors],

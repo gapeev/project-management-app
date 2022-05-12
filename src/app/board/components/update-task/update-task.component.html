@@ -6,7 +6,7 @@
   <form #ngForm="ngForm" [formGroup]="updateTaskForm">
     <mat-form-field appearance="fill">
       <mat-label>Title</mat-label>
-      <input type="text" matInput formControlName="title" />
+      <input type="text" matInput formControlName="title">
       <mat-error *ngIf="title?.hasError('required')">
         Title is <strong>required</strong>
       </mat-error>
@@ -14,12 +14,11 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Description</mat-label>
-      <input type="text" matInput formControlName="description" />
+      <input type="text" matInput formControlName="description">
       <mat-error *ngIf="description?.hasError('required')">
         Description is <strong>required</strong>
       </mat-error>
     </mat-form-field>
-
     <mat-form-field appearance="fill">
       <mat-label>User</mat-label>
       <mat-select formControlName="userId">
@@ -28,7 +27,6 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-
     <mat-checkbox formControlName="done">Done</mat-checkbox>
   </form>
   <div class="actions" mat-dialog-actions>
@@ -36,8 +34,7 @@
       mat-flat-button
       color="primary"
       (click)="onUpdateClick(board)"
-      [disabled]="ngForm.invalid"
-    >
+      [disabled]="ngForm.invalid">
       Update
     </button>
     <button mat-button (click)="onCancelClick()">Cancel</button>

@@ -6,7 +6,7 @@
   <form #ngForm="ngForm" [formGroup]="createTaskForm">
     <mat-form-field appearance="fill">
       <mat-label>Title</mat-label>
-      <input type="text" matInput formControlName="title" />
+      <input type="text" matInput formControlName="title">
       <mat-error *ngIf="title?.hasError('required')">
         Title is <strong>required</strong>
       </mat-error>
@@ -14,7 +14,7 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Description</mat-label>
-      <input type="text" matInput formControlName="description" />
+      <input type="text" matInput formControlName="description">
       <mat-error *ngIf="description?.hasError('required')">
         Description is <strong>required</strong>
       </mat-error>
@@ -36,8 +36,7 @@
       mat-flat-button
       color="primary"
       (click)="onCreateClick(board)"
-      [disabled]="ngForm.invalid"
-    >
+      [disabled]="ngForm.invalid">
       Create
     </button>
     <button mat-button (click)="onCancelClick()">Cancel</button>

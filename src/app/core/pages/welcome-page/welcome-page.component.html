@@ -3,10 +3,9 @@
     <div class="greeting">
 <h1>App Tracker</h1>
       <p>Работайте над идеями в команде!
-      В приложении есть всё необходимое для совместной работы с задачами и проектами. </p>
+      В приложении есть всё <br>необходимое для
+        совместной работы с задачами и проектами. </p>
+      <button class="registration-button" mat-stroked-button>Registration</button>
     </div>
-<button mat-stroked-button *ngIf="isUserAuth | async" (click)="signOut()">Logout</button>
-<button mat-stroked-button *ngIf="isUserAuth | async" (click)="deleteUser()">Delete</button>
-
   </div>
 </div>
