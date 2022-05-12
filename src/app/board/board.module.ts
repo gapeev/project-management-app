@@ -5,7 +5,6 @@ import { BoardRoutingModule } from './board-routing.module';
 import { BoardsPageComponent } from './pages/boards-page/boards-page.component';
 import { BoardPageComponent } from './pages/board-page/board-page.component';
 import { SharedModule } from '@shared/shared.module';
-import { CreateBoardComponent } from './components/create-board/create-board.component';
 import { CreateColumnComponent } from './components/create-column/create-column.component';
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { UpdateTaskComponent } from './components/update-task/update-task.component';
@@ -15,7 +14,6 @@ import { SearchTasksPageComponent } from './pages/search-tasks-page/search-tasks
   declarations: [
     BoardsPageComponent,
     BoardPageComponent,
-    CreateBoardComponent,
     CreateColumnComponent,
     CreateTaskComponent,
     UpdateTaskComponent,
