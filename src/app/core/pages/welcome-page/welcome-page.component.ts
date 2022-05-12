@@ -25,4 +25,5 @@ export class WelcomePageComponent {
   }
 
   constructor(private store: Store, private router: Router) {}
+
 }
