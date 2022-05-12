@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { CreateBoardComponent } from '@shared/components/create-board/create-board.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +13,7 @@ export class HeaderComponent implements OnInit {
   isPageScrolled = false;
   headerClassList: string[] = ['header'];
 
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     window.addEventListener('scroll', () => {
@@ -20,6 +22,12 @@ export class HeaderComponent implements OnInit {
       } else {
         if (this.headerClassList.includes('scrolled')) this.headerClassList.pop();
       }
+    });
+  }
+
+  public createBoard(): void {
+    const dialogRef = this.dialog.open(CreateBoardComponent, {
+      width: '400px',
     });
   }
 

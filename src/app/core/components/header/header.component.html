@@ -1,7 +1,9 @@
 <header>
   <mat-toolbar color="primary" [ngClass]="headerClassList">
     <span class="logo">PMA</span>
-    <button mat-raised-button>{{ 'HEADER.BUTTONS.CREATE' | translate }}</button>
+    <button mat-raised-button (click)="createBoard()">
+      {{ 'HEADER.BUTTONS.CREATE' | translate }}
+    </button>
     <button mat-raised-button>{{ 'HEADER.BUTTONS.LOGOUT' | translate }}</button>
     <button mat-raised-button>{{ 'HEADER.BUTTONS.EDIT' | translate }}</button>
     <mat-slide-toggle [(ngModel)]="isLangToggle" (change)="handleChange()">{{
