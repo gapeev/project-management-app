@@ -15,6 +15,7 @@ import HttpInterceptors from './interceptors';
 import reducers from '@store/reducers';
 import { environment } from '../../environments/environment';
 import UserEffects from '@store/effects/user.effects';
+import BoardEffects from '@store/effects/board.effects';
 
 @NgModule({
   declarations: [WelcomePageComponent, FooterComponent, HeaderComponent],
@@ -24,7 +25,7 @@ import UserEffects from '@store/effects/user.effects';
     HttpClientModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([UserEffects]),
+    EffectsModule.forRoot([UserEffects, BoardEffects]),
     StoreRouterConnectingModule.forRoot(),
     MaterialModule,
     FormsModule,
