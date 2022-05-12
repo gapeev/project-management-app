@@ -5,7 +5,6 @@ import { selectBoards, selectIsBoardPending } from '@store/selectors/board.selec
 import { Board } from '@shared/models/board.model';
 import { deleteBoard, fetchBoards } from '@store/actions/board.actions';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateBoardComponent } from '../../components/create-board/create-board.component';
 import { DeleteDialogComponent } from '@shared/components/delete-dialog/delete-dialog.component';
 
 @Component({
@@ -19,12 +18,6 @@ export class BoardsPageComponent implements OnInit {
   public ngOnInit(): void {
     this.boards$ = this.store.select(selectBoards);
     this.store.dispatch(fetchBoards());
-  }
-
-  public createBoard(): void {
-    const dialogRef = this.dialog.open(CreateBoardComponent, {
-      width: '400px',
-    });
   }
 
   public deleteBoard(boardId: string, boardTitle: string): void {

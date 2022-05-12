@@ -1,3 +1,17 @@
+.boards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
 .board {
-  margin: 1rem;
+  flex-basis: 270px;
+  display: flex;
+  flex-direction: column;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
 }
