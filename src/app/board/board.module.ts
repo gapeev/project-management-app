@@ -7,4 +7,5 @@ import { BoardRoutingModule } from './board-routing.module';
   declarations: [],
   imports: [CommonModule, BoardRoutingModule],
 })
+
 export class BoardModule {}
