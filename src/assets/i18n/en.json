@@ -1,0 +1,62 @@
+{
+  "HEADER": {
+    "BUTTONS": {
+      "CREATE": "create new board",
+      "LOGOUT": "logout",
+      "EDIT": "edit profile"
+    }
+  },
+  "LOGIN-PAGE": {
+    "TITLE": "Login",
+    "INPUTS": {
+      "LOGIN": "Login",
+      "PASSWORD": "Password"
+    },
+    "ERROR-TEXT": {
+      "LOGIN": "Login is ",
+      "PASSWORD": "Password is "
+    },
+    "REQUIRED": "required",
+    "BUTTON": "Login"
+  },
+  "SIGN-UP-PAGE": {
+    "TITLE": "Sign Up",
+    "INPUTS": {
+      "NAME": "Name",
+      "LOGIN": "Login",
+      "PASSWORD": "Password"
+    },
+    "ERROR-TEXT": {
+      "NAME": "Name is ",
+      "LOGIN": "Login is ",
+      "PASSWORD": "Password is "
+    },
+    "REQUIRED": {
+      "NAME": "required",
+      "OTHER": "required"
+    },
+    "BUTTON": "Sign Up"
+  },
+  "WELCOME-PAGE": {
+    "LOGOUT": "Logout",
+    "DELETE": "Delete"
+  },
+  "UPDATE-USER": {
+    "TITLE": "Update",
+    "INPUTS": {
+      "NAME": "Name",
+      "LOGIN": "Login",
+      "PASSWORD": "Password"
+    },
+    "ERROR-TEXT": {
+      "NAME": "Name is ",
+      "LOGIN": "Login is ",
+      "PASSWORD": "Password is "
+    },
+    "REQUIRED": {
+      "NAME": "required",
+      "OTHER": "required"
+    },
+    "BUTTON": "Update"
+  }
+}

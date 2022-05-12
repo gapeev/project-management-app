@@ -1,0 +1,62 @@
+{
+  "HEADER": {
+    "BUTTONS": {
+      "CREATE": "создать новую доску",
+      "LOGOUT": "выйти",
+      "EDIT": "изменить профиль"
+    }
+  },
+  "LOGIN-PAGE": {
+    "TITLE": "Вход",
+    "INPUTS": {
+      "LOGIN": "Логин",
+      "PASSWORD": "Пароль"
+    },
+    "ERROR-TEXT": {
+      "LOGIN": "Логин ",
+      "PASSWORD": "Пароль "
+    },
+    "REQUIRED": "обязателен",
+    "BUTTON": "Войти"
+  },
+  "SIGN-UP-PAGE": {
+    "TITLE": "Регистрация",
+    "INPUTS": {
+      "NAME": "Имя",
+      "LOGIN": "Логин",
+      "PASSWORD": "Пароль"
+    },
+    "ERROR-TEXT": {
+      "NAME": "Имя ",
+      "LOGIN": "Логин ",
+      "PASSWORD": "Пароль "
+    },
+    "REQUIRED": {
+      "NAME": "обязательно",
+      "OTHER": "обязателен"
+    },
+    "BUTTON": "Зарегистрироваться"
+  },
+  "WELCOME-PAGE": {
+    "LOGOUT": "Выйти",
+    "DELETE": "Удалить"
+  },
+  "UPDATE-USER": {
+    "TITLE": "Обновить",
+    "INPUTS": {
+      "NAME": "Имя",
+      "LOGIN": "Логин",
+      "PASSWORD": "Пароль"
+    },
+    "ERROR-TEXT": {
+      "NAME": "Имя ",
+      "LOGIN": "Логин ",
+      "PASSWORD": "Пароль "
+    },
+    "REQUIRED": {
+      "NAME": "обязательно",
+      "OTHER": "обязателен"
+    },
+    "BUTTON": "Обновить"
+  }
+}

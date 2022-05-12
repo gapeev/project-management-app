@@ -1,23 +1,27 @@
 <mat-progress-bar *ngIf="isPending | async" mode="indeterminate"></mat-progress-bar>
 <app-notification (confirm)="onErrorConfirm()"></app-notification>
 <form #ngForm="ngForm" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-  <h2>Login</h2>
+  <h2>{{ 'LOGIN-PAGE.TITLE' | translate }}</h2>
 
   <mat-form-field appearance="fill">
-    <mat-label>Login</mat-label>
+    <mat-label>{{ 'LOGIN-PAGE.INPUTS.LOGIN' | translate }}</mat-label>
     <input type="text" matInput formControlName="login" />
-    <mat-error *ngIf="login?.hasError('required')">Login is <strong>required</strong></mat-error>
+    <mat-error *ngIf="login?.hasError('required')"
+      >{{ 'LOGIN-PAGE.ERROR-TEXT.LOGIN' | translate
+      }}<strong>{{ 'LOGIN-PAGE.REQUIRED' | translate }}</strong></mat-error
+    >
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Password</mat-label>
+    <mat-label>{{ 'LOGIN-PAGE.INPUTS.PASSWORD' | translate }}</mat-label>
     <input type="password" matInput formControlName="password" />
     <mat-error *ngIf="password?.hasError('required')">
-      Password is <strong>required</strong>
+      {{ 'LOGIN-PAGE.ERROR-TEXT.PASSWORD' | translate
+      }}<strong>{{ 'LOGIN-PAGE.REQUIRED' | translate }}</strong>
     </mat-error>
   </mat-form-field>
 
   <button mat-stroked-button type="submit" [disabled]="ngForm.invalid || isSubmitting">
-    Login
+    {{ 'LOGIN-PAGE.BUTTON' | translate }}
   </button>
 </form>
