@@ -1,29 +1,36 @@
 <mat-progress-bar *ngIf="isPending | async" mode="indeterminate"></mat-progress-bar>
 <app-notification (confirm)="onErrorConfirm()"></app-notification>
 <form #ngForm="ngForm" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-  <h2>Sign Up</h2>
+  <h2>{{ 'SIGN-UP-PAGE.TITLE' | translate }}</h2>
 
   <mat-form-field appearance="fill">
-    <mat-label>Name</mat-label>
+    <mat-label>{{ 'SIGN-UP-PAGE.INPUTS.NAME' | translate }}</mat-label>
     <input type="text" matInput formControlName="name" />
-    <mat-error *ngIf="name?.hasError('required')">Name is <strong>required</strong></mat-error>
+    <mat-error *ngIf="name?.hasError('required')"
+      >{{ 'SIGN-UP-PAGE.ERROR-TEXT.NAME' | translate
+      }}<strong>{{ 'SIGN-UP-PAGE.REQUIRED.NAME' | translate }}</strong></mat-error
+    >
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Login</mat-label>
+    <mat-label>{{ 'SIGN-UP-PAGE.INPUTS.LOGIN' | translate }}</mat-label>
     <input type="text" matInput formControlName="login" />
-    <mat-error *ngIf="login?.hasError('required')">Login is <strong>required</strong></mat-error>
+    <mat-error *ngIf="login?.hasError('required')"
+      >{{ 'SIGN-UP-PAGE.ERROR-TEXT.LOGIN' | translate
+      }}<strong>{{ 'SIGN-UP-PAGE.REQUIRED.OTHER' | translate }}</strong></mat-error
+    >
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <mat-label>Password</mat-label>
+    <mat-label>{{ 'SIGN-UP-PAGE.INPUTS.PASSWORD' | translate }}</mat-label>
     <input type="password" matInput formControlName="password" />
-    <mat-error *ngIf="password?.hasError('required')">
-      Password is <strong>required</strong>
+    <mat-error *ngIf="password?.hasError('required')"
+      >{{ 'SIGN-UP-PAGE.ERROR-TEXT.PASSWORD' | translate
+      }}<strong>{{ 'SIGN-UP-PAGE.REQUIRED.OTHER' | translate }}</strong>
     </mat-error>
   </mat-form-field>
 
   <button mat-stroked-button type="submit" [disabled]="ngForm.invalid || isSubmitting">
-    Sign Up
+    {{ 'SIGN-UP-PAGE.BUTTON' | translate }}
   </button>
 </form>
