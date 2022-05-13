@@ -3,6 +3,7 @@ $primary: #3f51b5;
 
 .welcome-page {
   display: flex;
+
   &__container {
     margin: 0 auto;
     max-width: 1440px;
@@ -11,11 +12,13 @@ $primary: #3f51b5;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
     .greeting {
       height: 30vh;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+
       h1 {
         color: $primary;
         font-weight: bold;
@@ -23,6 +26,7 @@ $primary: #3f51b5;
         letter-spacing: 3px;
         line-height: 4rem;
       }
+
       p {
         margin: 0;
         font-family: $font;
@@ -34,6 +38,7 @@ $primary: #3f51b5;
         color: $primary;
         display: table;
       }
+
       .registration-button {
         background: $primary;
         color: white;
@@ -42,9 +47,10 @@ $primary: #3f51b5;
         height: 45px;
         width: 250px;
       }
+
       .registration-button:hover {
         transition-duration: 1000ms;
-        background: rgb(2,0,36);
+        background: rgb(2, 0, 36);
         background: linear-gradient(90deg, $primary 0%, $primary 35%, #a14a8b 100%);
       }
     }
