@@ -173,7 +173,10 @@ export const boardReducer = createReducer(
     getAllTasksSuccess,
     (state, { tasks }): BoardState => ({
       ...state,
-      search: { ...state.search, tasks },
+      search: {
+        ...state.search,
+        tasks: tasks.map((task) => ({ ...task, user: task.user ?? { name: '-' } })),
+      },
       isPending: false,
     })
   )
