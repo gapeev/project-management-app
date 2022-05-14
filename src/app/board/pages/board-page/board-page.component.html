@@ -15,7 +15,12 @@
     cdkDropListGroup
     (cdkDropListDropped)="dropColumn($event)"
   >
-    <mat-card class="column" cdkDrag *ngFor="let column of board.columns | orderBy: 'order'">
+    <mat-card
+      class="column"
+      cdkDrag
+      [cdkDragStartDelay]="500"
+      *ngFor="let column of board.columns | orderBy: 'order'"
+    >
       <div class="title">
         <app-editable-title
           [content]="column.title"
