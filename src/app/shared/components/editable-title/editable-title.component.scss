@@ -1,4 +1,22 @@
-.controls {
+.form {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  column-gap: 5px;
+}
+
+.button {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-top: 0.5rem;
+  line-height: 1.7rem;
+}
+
+.input {
+  width: calc(100% - 4rem);
+  margin-top: -0.4rem;
+}
+
+.title {
+  margin-top: 0.2rem;
+  margin-bottom: 0.8rem;
 }

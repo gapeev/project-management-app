@@ -1,12 +1,12 @@
-<div class="controls" *ngIf="isEditable; else static">
-  <form #ngForm="ngForm" [formGroup]="editForm" (ngSubmit)="onSubmit()">
-    <button mat-icon-button type="submit" [disabled]="ngForm.invalid">
+<div *ngIf="isEditable; else static">
+  <form class="form" #ngForm="ngForm" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <button class="button" mat-icon-button type="submit" [disabled]="ngForm.invalid">
       <mat-icon>check</mat-icon>
     </button>
-    <button mat-icon-button type="button" (click)="onCancel()">
+    <button class="button" mat-icon-button type="button" (click)="onCancel()">
       <mat-icon>close</mat-icon>
     </button>
-    <mat-form-field>
+    <mat-form-field class="input">
       <input type="text" matInput formControlName="title" />
     </mat-form-field>
   </form>
