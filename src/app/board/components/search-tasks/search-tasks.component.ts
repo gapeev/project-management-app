@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TaskSearch } from '@shared/models/board.model';
 import { getAllTasks } from '@store/actions/board.actions';
@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './search-tasks.component.html',
   styleUrls: ['./search-tasks.component.scss'],
 })
-export class SearchTasksComponent implements OnInit, OnDestroy {
+export class SearchTasksComponent implements OnInit, OnDestroy, AfterViewInit {
   public searchForm!: FormGroup;
 
   public tasks$!: Observable<TaskSearch[]>;
@@ -55,11 +55,18 @@ export class SearchTasksComponent implements OnInit, OnDestroy {
     this.subscriptions$.push(
       this.store.select(selectAllTasks).subscribe((tasks) => {
         this.dataSource = new MatTableDataSource<TaskSearch>(tasks);
-        this.dataSource.paginator = this.paginator;
       })
     );
 
     this.store.dispatch(getAllTasks());
+  }
+
+  public ngAfterViewInit(): void {
+    this.subscriptions$.push(
+      this.store.select(selectAllTasks).subscribe((tasks) => {
+        this.dataSource.paginator = this.paginator;
+      })
+    );
   }
 
   public getTableDataSource(tasks: TaskSearch[]): MatTableDataSource<TaskSearch> {

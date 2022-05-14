@@ -1,5 +1,5 @@
 <div class="page-container">
-  <div [ngClass]="{ boards: true, hide: (isPending | async) }">
+  <div class="boards">
     <mat-card class="board" *ngFor="let board of boards$ | async">
       <mat-card-title>{{ board.title }}</mat-card-title>
       <mat-card-content>
