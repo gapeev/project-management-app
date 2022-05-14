@@ -1,7 +1,13 @@
-<mat-progress-bar *ngIf="isPending | async" mode="indeterminate"></mat-progress-bar>
-<app-notification (confirm)="onErrorConfirm()"></app-notification>
-<button mat-raised-button (click)="createColumn()">Create column</button>
-<div *ngIf="board$ | async as board">
+<div *ngIf="board$ | async as board" class="page-container board-container">
+  <app-notification (confirm)="onErrorConfirm()"></app-notification>
+  <div class="header">
+    <div class="breadcrumbs">
+      <a class="breadcrumb-link" routerLink="/boards">Boards</a>
+      <span>/</span>
+      <span>{{ board.title }}</span>
+    </div>
+    <button mat-stroked-button color="primary" (click)="createColumn()">Create column</button>
+  </div>
   <div
     class="columns"
     cdkDropList
@@ -9,16 +15,12 @@
     cdkDropListGroup
     (cdkDropListDropped)="dropColumn($event)"
   >
-    <div class="column" cdkDrag *ngFor="let column of board.columns | orderBy: 'order'">
+    <mat-card class="column" cdkDrag *ngFor="let column of board.columns | orderBy: 'order'">
       <div class="title">
-        <!-- <h3>{{ column.title }}</h3> -->
         <app-editable-title
           [content]="column.title"
           (save)="updateColumn(board.id, column)($event)"
         ></app-editable-title>
-        <button mat-stroked-button type="button" (click)="deleteColumn(column.id, column.title)">
-          del
-        </button>
       </div>
       <div
         class="tasks"
@@ -27,18 +29,32 @@
         cdkDropList
         (cdkDropListDropped)="dropTask($event)"
       >
-        <div class="task" cdkDrag *ngFor="let task of column.tasks | orderBy: 'order'">
+        <mat-card class="task" cdkDrag *ngFor="let task of column.tasks | orderBy: 'order'">
           <p (click)="selectTask(column.id, task)">{{ task.title }}</p>
-          <button
-            mat-stroked-button
-            type="button"
-            (click)="deleteTask(column.id, task.id, task.title)"
-          >
-            del
+          <button mat-icon-button [matMenuTriggerFor]="taskMenu">
+            <mat-icon>more_vert</mat-icon>
           </button>
-        </div>
+          <mat-menu #taskMenu="matMenu">
+            <button mat-menu-item (click)="deleteTask(column.id, task.id, task.title)">
+              <mat-icon color="warn">delete_forever</mat-icon>
+              <span>Delete</span>
+            </button>
+          </mat-menu>
+        </mat-card>
       </div>
-      <button mat-raised-button type="button" (click)="createTask(column.id)">Create task</button>
-    </div>
+      <mat-card-actions class="actions">
+        <button
+          class="actions-delete"
+          mat-icon-button
+          color="warn"
+          (click)="deleteColumn(column.id, column.title)"
+        >
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+        <button mat-stroked-button color="primary" (click)="createTask(column.id)">
+          Create task
+        </button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>

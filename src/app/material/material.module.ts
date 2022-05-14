@@ -16,6 +16,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 
 const MaterialComponents = [
   MatFormFieldModule,
@@ -34,6 +35,7 @@ const MaterialComponents = [
   MatSortModule,
   MatCheckboxModule,
   MatCardModule,
+  MatMenuModule,
 ];
 
 @NgModule({
