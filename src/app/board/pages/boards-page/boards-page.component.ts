@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { isObservable, Observable } from 'rxjs';
 import { selectBoards, selectIsBoardPending } from '@store/selectors/board.selectors';
 import { Board } from '@shared/models/board.model';
 import { deleteBoard, fetchBoards } from '@store/actions/board.actions';
@@ -32,6 +32,10 @@ export class BoardsPageComponent implements OnInit {
       }
       this.store.dispatch(deleteBoard({ boardId }));
     });
+  }
+
+  public get isPending(): Observable<boolean> {
+    return this.store.select(selectIsBoardPending);
   }
 
   constructor(private store: Store, private dialog: MatDialog) {}
