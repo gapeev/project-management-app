@@ -24,10 +24,6 @@ export class SignUpPageComponent implements OnInit {
     this.isSubmitting = false;
   }
 
-  public get isPending(): Observable<boolean> {
-    return this.store.select(selectIsUserPending);
-  }
-
   public get name(): AbstractControl | null {
     return this.signUpForm.get('name');
   }
