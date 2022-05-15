@@ -1,15 +1,16 @@
 <div *ngIf="board$ | async as board">
   <h1 class="title" mat-dialog-title>
     <mat-icon class="icon" aria-hidden="false" aria-label="add circle icon">add_circle</mat-icon>
-    Create Column
+    {{ 'CREATE-COLUMN.TITLE' | translate }}
   </h1>
   <div mat-dialog-content class="form-content">
     <form #ngForm="ngForm" [formGroup]="createColumnForm">
       <mat-form-field appearance="fill">
-        <mat-label>Title</mat-label>
+        <mat-label>{{ 'CREATE-COLUMN.FIELDS-TITLES.TITLE' | translate }}</mat-label>
         <input type="text" matInput formControlName="title" />
         <mat-error *ngIf="title?.hasError('required')"
-          >Title is <strong>required</strong></mat-error
+          >{{ 'CREATE-COLUMN.ERRORS-TEXT.TITLE' | translate
+          }}<strong>{{ 'CREATE-COLUMN.REQUIRED' | translate }}</strong></mat-error
         >
       </mat-form-field>
     </form>
@@ -21,8 +22,10 @@
       (click)="onCreateClick(board)"
       [disabled]="ngForm.invalid"
     >
-      Create
+      {{ 'CREATE-COLUMN.BUTTONS.CREATE' | translate }}
     </button>
-    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-button (click)="onCancelClick()">
+      {{ 'CREATE-COLUMN.BUTTONS.CANCEL' | translate }}
+    </button>
   </div>
 </div>

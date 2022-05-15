@@ -17,7 +17,7 @@ import { CreateBoardComponent } from './components/create-board/create-board.com
     EditableTitleComponent,
     CreateBoardComponent,
   ],
-  imports: [CommonModule, ReactiveFormsModule, MaterialModule],
+  imports: [CommonModule, ReactiveFormsModule, MaterialModule, TranslateModule],
   exports: [
     ReactiveFormsModule,
     MaterialModule,

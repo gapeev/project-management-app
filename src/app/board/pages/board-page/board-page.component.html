@@ -6,7 +6,9 @@
       <span>/</span>
       <span>{{ board.title }}</span>
     </div>
-    <button mat-stroked-button color="primary" (click)="createColumn()">Create column</button>
+    <button mat-stroked-button color="primary" (click)="createColumn()">
+      {{ 'BOARD-PAGE.BUTTONS.CREATE.COLUMN' | translate }}
+    </button>
   </div>
   <div
     class="columns"
@@ -42,7 +44,7 @@
           <mat-menu #taskMenu="matMenu">
             <button mat-menu-item (click)="deleteTask(column.id, task.id, task.title)">
               <mat-icon color="warn">delete_forever</mat-icon>
-              <span>Delete</span>
+              <span>{{ 'BOARD-PAGE.BUTTONS.DELETE' | translate }}</span>
             </button>
           </mat-menu>
         </mat-card>
@@ -57,7 +59,7 @@
           <mat-icon>delete_forever</mat-icon>
         </button>
         <button mat-stroked-button color="primary" (click)="createTask(column.id)">
-          Create task
+          {{ 'BOARD-PAGE.BUTTONS.CREATE.TASK' | translate }}
         </button>
       </mat-card-actions>
     </mat-card>

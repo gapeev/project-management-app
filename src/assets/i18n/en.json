@@ -58,5 +58,114 @@
       "OTHER": "required"
     },
     "BUTTON": "Update"
+  },
+  "CREATE-BOARD": {
+    "TITLE": "Create Board",
+    "FIELDS-TITLES": {
+      "TITLE": "Title",
+      "DESCRIPTION": "Description"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Title is ",
+      "DESCRIPTION": "Description is "
+    },
+    "REQUIRED": "required",
+    "BUTTONS": {
+      "CREATE": "Create",
+      "CANCEL": "Cancel"
+    }
+  },
+  "CREATE-COLUMN": {
+    "TITLE": "Create Column",
+    "FIELDS-TITLES": {
+      "TITLE": "Title"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Title is "
+    },
+    "REQUIRED": "required",
+    "BUTTONS": {
+      "CREATE": "Create",
+      "CANCEL": "Cancel"
+    }
+  },
+  "CREATE-TASK": {
+    "TITLE": "Create Task",
+    "FIELDS-TITLES": {
+      "TITLE": "Title",
+      "DESCRIPTION": "Description",
+      "USER": "User"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Title is ",
+      "DESCRIPTION": "Description is "
+    },
+    "REQUIRED": "required",
+    "DONE": "Done",
+    "BUTTONS": {
+      "CREATE": "Create",
+      "CANCEL": "Cancel"
+    }
+  },
+  "UPDATE-TASK": {
+    "TITLE": "Task",
+    "FIELDS-TITLES": {
+      "TITLE": "Title",
+      "DESCRIPTION": "Description",
+      "USER": "User"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Title is ",
+      "DESCRIPTION": "Description is "
+    },
+    "REQUIRED": "required",
+    "DONE": "Done",
+    "BUTTONS": {
+      "UPDATE": "Update",
+      "CANCEL": "Cancel"
+    }
+  },
+  "BOARD-PAGE": {
+    "BUTTONS": {
+      "CREATE": {
+        "COLUMN": "Create column",
+        "TASK": "Create task"
+      },
+      "DELETE": "Delete"
+    }
+  },
+  "BOARDS-PAGE": {
+    "BUTTONS": {
+      "CREATE": "Create board",
+      "DELETE": "Delete"
+    }
+  },
+  "SEARCH-TASKS-PAGE": {
+    "TITLE": "Title",
+    "DESCRIPTION": "Description",
+    "USER": "User",
+    "NUMB": "No.",
+    "DONE": "Done",
+    "PAGINATOR": {
+      "PER-PAGE": "Items per page",
+      "NEXT-PAGE": "Next page",
+      "PREV-PAGE": "Previous page",
+      "FIRST-PAGE": "First page",
+      "LAST-PAGE": "Last page",
+      "LABEL": "{{startIndex}} - {{endIndex}} of {{length}}",
+      "LABEL-0": "0 of {{length}}"
+    }
+  },
+  "DELETE-DIALOG": {
+    "TITLE": "warning",
+    "DELETE": "Delete {{ target }}?",
+    "TEXT": "You're about to permanently delete this {{ type }} and all of its data. If you're not sure, you can cancel this action.",
+    "BUTTONS": {
+      "DELETE": "Delete",
+      "CANCEL": "Cancel"
+    },
+    "BOARD": "board",
+    "COLUMN": "column",
+    "TASK": "task"
   }
 }
