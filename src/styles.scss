@@ -1,10 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.form {
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-card {
+    max-width: 450px;
+    flex-grow: 1;
+  }
+
+  &-content {
+    mat-form-field {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
 }

@@ -12,6 +12,7 @@ import {
   deleteTask,
   fetchBoard,
   fetchBoardFailure,
+  fetchBoardInit,
   fetchBoards,
   fetchBoardsSuccess,
   fetchBoardSuccess,
@@ -48,6 +49,10 @@ export const boardReducer = createReducer(
     (state, { boards }): BoardState => ({ ...state, boards, isPending: false })
   ),
   on(fetchBoard, (state): BoardState => ({ ...state, isPending: true })),
+  on(
+    fetchBoardInit,
+    (state): BoardState => ({ ...state, board: initialState.board, isPending: true })
+  ),
   on(fetchBoardSuccess, (state, data): BoardState => ({ ...state, ...data, isPending: false })),
   on(fetchBoardFailure, (state): BoardState => ({ ...state, isPending: false })),
   on(changeTaskIndex, (state, { columnId, prevIndex, currIndex }): BoardState => {
@@ -168,7 +173,10 @@ export const boardReducer = createReducer(
     getAllTasksSuccess,
     (state, { tasks }): BoardState => ({
       ...state,
-      search: { ...state.search, tasks },
+      search: {
+        ...state.search,
+        tasks: tasks.map((task) => ({ ...task, user: task.user ?? { name: '-' } })),
+      },
       isPending: false,
     })
   )

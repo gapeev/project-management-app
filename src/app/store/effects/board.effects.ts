@@ -12,6 +12,7 @@ import {
   deleteColumn,
   deleteTask,
   fetchBoard,
+  fetchBoardInit,
   fetchBoards,
   fetchBoardsSuccess,
   fetchBoardSuccess,
@@ -38,7 +39,7 @@ export default class BoardEffects {
 
   private fetchBoard$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(fetchBoard),
+      ofType(fetchBoard, fetchBoardInit),
       mergeMap(({ id }) =>
         this.boardService.getBoard(id).pipe(map((board) => fetchBoardSuccess({ board })))
       )

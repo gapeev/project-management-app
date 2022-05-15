@@ -23,10 +23,6 @@ export class SignInPageComponent implements OnInit {
     this.isSubmitting = false;
   }
 
-  public get isPending(): Observable<boolean> {
-    return this.store.select(selectIsUserPending);
-  }
-
   public get login(): AbstractControl | null {
     return this.signInForm.get('login');
   }

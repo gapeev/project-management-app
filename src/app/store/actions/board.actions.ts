@@ -10,6 +10,11 @@ export const fetchBoardsSuccess = createAction(
 
 export const fetchBoard = createAction('[Board Page] Fetch Board', props<{ id: string }>());
 
+export const fetchBoardInit = createAction(
+  '[Board Page] Fetch Board Init',
+  props<{ id: string }>()
+);
+
 export const fetchBoardSuccess = createAction(
   '[Board Page] Fetch Board Success',
   props<{ board: Board }>()
