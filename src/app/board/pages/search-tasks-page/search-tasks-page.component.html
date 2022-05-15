@@ -2,9 +2,9 @@
 <form #ngForm="ngForm" [formGroup]="searchForm">
   <mat-form-field appearance="fill">
     <mat-select formControlName="type">
-      <mat-option value="title">Title</mat-option>
-      <mat-option value="description">Description</mat-option>
-      <mat-option value="user">User</mat-option>
+      <mat-option value="title">{{ 'SEARCH-TASKS-PAGE.TITLE' | translate }}</mat-option>
+      <mat-option value="description">{{ 'SEARCH-TASKS-PAGE.DESCRIPTION' | translate }}</mat-option>
+      <mat-option value="user">{{ 'SEARCH-TASKS-PAGE.USER' | translate }}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field>
@@ -15,27 +15,27 @@
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <th mat-header-cell *matHeaderCellDef>{{ 'SEARCH-TASKS-PAGE.NUMB' | translate }}</th>
         <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
       </ng-container>
 
       <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef>Title</th>
+        <th mat-header-cell *matHeaderCellDef>{{ 'SEARCH-TASKS-PAGE.TITLE' | translate }}</th>
         <td mat-cell *matCellDef="let element">{{ element.title }}</td>
       </ng-container>
 
       <ng-container matColumnDef="description">
-        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <th mat-header-cell *matHeaderCellDef>{{ 'SEARCH-TASKS-PAGE.DESCRIPTION' | translate }}</th>
         <td mat-cell *matCellDef="let element">{{ element.description }}</td>
       </ng-container>
 
       <ng-container matColumnDef="done">
-        <th mat-header-cell *matHeaderCellDef>Done</th>
+        <th mat-header-cell *matHeaderCellDef>{{ 'SEARCH-TASKS-PAGE.DONE' | translate }}</th>
         <td mat-cell *matCellDef="let element">{{ element.done ? 'Yes' : 'No' }}</td>
       </ng-container>
 
       <ng-container matColumnDef="user">
-        <th mat-header-cell *matHeaderCellDef>User</th>
+        <th mat-header-cell *matHeaderCellDef>{{ 'SEARCH-TASKS-PAGE.USER' | translate }}</th>
         <td mat-cell *matCellDef="let element">{{ element.user.name }}</td>
       </ng-container>
 

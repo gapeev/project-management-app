@@ -58,5 +58,114 @@
       "OTHER": "обязателен"
     },
     "BUTTON": "Обновить"
+  },
+  "CREATE-BOARD": {
+    "TITLE": "Создать Доску",
+    "FIELDS-TITLES": {
+      "TITLE": "Название",
+      "DESCRIPTION": "Описание"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Название ",
+      "DESCRIPTION": "Описание "
+    },
+    "REQUIRED": "обязательно",
+    "BUTTONS": {
+      "CREATE": "Создать",
+      "CANCEL": "Отменить"
+    }
+  },
+  "CREATE-COLUMN": {
+    "TITLE": "Создать Колонку",
+    "FIELDS-TITLES": {
+      "TITLE": "Название"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Название "
+    },
+    "REQUIRED": "обязательно",
+    "BUTTONS": {
+      "CREATE": "Создать",
+      "CANCEL": "Отменить"
+    }
+  },
+  "CREATE-TASK": {
+    "TITLE": "Создать Задачу",
+    "FIELDS-TITLES": {
+      "TITLE": "Название",
+      "DESCRIPTION": "Описание",
+      "USER": "Пользователь"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Название ",
+      "DESCRIPTION": "Описание "
+    },
+    "REQUIRED": "обязательно",
+    "DONE": "Выполнено",
+    "BUTTONS": {
+      "CREATE": "Создать",
+      "CANCEL": "Отменить"
+    }
+  },
+  "UPDATE-TASK": {
+    "TITLE": "Задача",
+    "FIELDS-TITLES": {
+      "TITLE": "Название",
+      "DESCRIPTION": "Описание",
+      "USER": "Пользователь"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Название ",
+      "DESCRIPTION": "Описание "
+    },
+    "REQUIRED": "обязательно",
+    "DONE": "Выполнено",
+    "BUTTONS": {
+      "UPDATE": "Обновить",
+      "CANCEL": "Отменить"
+    }
+  },
+  "BOARD-PAGE": {
+    "BUTTONS": {
+      "CREATE": {
+        "COLUMN": "Создать колонку",
+        "TASK": "Создать задачу"
+      },
+      "DELETE": "Удалить"
+    }
+  },
+  "BOARDS-PAGE": {
+    "BUTTONS": {
+      "CREATE": "Создать доску",
+      "DELETE": "Удалить"
+    }
+  },
+  "SEARCH-TASKS-PAGE": {
+    "TITLE": "Название",
+    "DESCRIPTION": "Описание",
+    "USER": "Пользователь",
+    "NUMB": "№",
+    "DONE": "Выполнено",
+    "PAGINATOR": {
+      "PER-PAGE": "Элементов на странице",
+      "NEXT-PAGE": "Следующая страница",
+      "PREV-PAGE": "Предыдущая страница",
+      "FIRST-PAGE": "Первая страница",
+      "LAST-PAGE": "Последняя страница",
+      "LABEL": "{{startIndex}} - {{endIndex}} из {{length}}",
+      "LABEL-0": "0 из {{length}}"
+    }
+  },
+  "DELETE-DIALOG": {
+    "TITLE": "внимание",
+    "DELETE": "Удалить {{ target }}?",
+    "TEXT": "Вы собираетесь безвозвратно удалить эту {{ type }} и все его данные. Если вы не уверены, вы можете отменить это действие.",
+    "BUTTONS": {
+      "DELETE": "Delete",
+      "CANCEL": "Cancel"
+    },
+    "BOARD": "доску",
+    "COLUMN": "колонку",
+    "TASK": "задачу"
   }
 }
