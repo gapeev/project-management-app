@@ -83,7 +83,10 @@ export default class UserEffects {
     () => {
       return this.actions$.pipe(
         ofType(signOut),
-        tap(() => this.userService.unsetLocalStorageUser())
+        tap(() => {
+          this.userService.unsetLocalStorageUser();
+          this.router.navigateByUrl('/');
+        })
       );
     },
     { dispatch: false }
@@ -113,7 +116,7 @@ export default class UserEffects {
         ofType(deleteUserSuccess),
         tap(() => {
           this.userService.unsetLocalStorageUser();
-          this.router.navigateByUrl('/auth/sign-in');
+          this.router.navigateByUrl('/');
         })
       );
     },
