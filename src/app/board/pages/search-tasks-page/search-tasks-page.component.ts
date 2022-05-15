@@ -1,19 +1,36 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewChecked,
+  ChangeDetectorRef,
+  Component,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Search, TaskSearch } from '@shared/models/board.model';
 import { getAllTasks } from '@store/actions/board.actions';
 import { selectAllTasks, selectIsBoardPending } from '@store/selectors/board.selectors';
 import { Observable, Subscription } from 'rxjs';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { Paginator } from './paginator';
 
 @Component({
   selector: 'app-search-tasks-page',
   templateUrl: './search-tasks-page.component.html',
   styleUrls: ['./search-tasks-page.component.scss'],
+  providers: [
+    {
+      provide: MatPaginatorIntl,
+      deps: [TranslateService],
+      useFactory: (translateService: TranslateService) =>
+        new Paginator(translateService).getPaginatorIntl(),
+    },
+  ],
 })
-export class SearchTasksPageComponent implements OnInit, OnDestroy {
+export class SearchTasksPageComponent implements OnInit, OnDestroy, AfterViewChecked {
   public searchForm!: FormGroup;
 
   public tasks$!: Observable<TaskSearch[]>;
@@ -73,5 +90,13 @@ export class SearchTasksPageComponent implements OnInit, OnDestroy {
     return this.store.select(selectIsBoardPending);
   }
 
-  constructor(private store: Store, private formBuilder: FormBuilder) {}
+  ngAfterViewChecked(): void {
+    this.cdr.detectChanges();
+  }
+
+  constructor(
+    private store: Store,
+    private formBuilder: FormBuilder,
+    private cdr: ChangeDetectorRef
+  ) {}
 }

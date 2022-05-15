@@ -1,6 +1,8 @@
 <mat-progress-bar *ngIf="isPending | async" mode="indeterminate"></mat-progress-bar>
 <app-notification (confirm)="onErrorConfirm()"></app-notification>
-<button mat-raised-button (click)="createColumn()">Create column</button>
+<button mat-raised-button (click)="createColumn()">
+  {{ 'BOARD-PAGE.BUTTONS.CREATE.COLUMN' | translate }}
+</button>
 <div *ngIf="board$ | async as board">
   <div
     class="columns"
@@ -17,7 +19,7 @@
           (save)="updateColumn(board.id, column)($event)"
         ></app-editable-title>
         <button mat-stroked-button type="button" (click)="deleteColumn(column.id, column.title)">
-          del
+          {{ 'BOARD-PAGE.BUTTONS.DELETE' | translate }}
         </button>
       </div>
       <div
@@ -34,11 +36,13 @@
             type="button"
             (click)="deleteTask(column.id, task.id, task.title)"
           >
-            del
+            {{ 'BOARD-PAGE.BUTTONS.DELETE' | translate }}
           </button>
         </div>
       </div>
-      <button mat-raised-button type="button" (click)="createTask(column.id)">Create task</button>
+      <button mat-raised-button type="button" (click)="createTask(column.id)">
+        {{ 'BOARD-PAGE.BUTTONS.CREATE.TASK' | translate }}
+      </button>
     </div>
   </div>
 </div>

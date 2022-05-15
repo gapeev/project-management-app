@@ -10,7 +10,7 @@ import { EditableTitleComponent } from './components/editable-title/editable-tit
 
 @NgModule({
   declarations: [NotificationComponent, OrderByPipe, DeleteDialogComponent, EditableTitleComponent],
-  imports: [CommonModule, ReactiveFormsModule, MaterialModule],
+  imports: [CommonModule, ReactiveFormsModule, MaterialModule, TranslateModule],
   exports: [
     ReactiveFormsModule,
     MaterialModule,
