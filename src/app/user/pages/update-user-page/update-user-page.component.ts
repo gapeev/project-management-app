@@ -43,10 +43,6 @@ export class UpdateUserPageComponent implements OnInit, OnDestroy {
     this.subscription$.unsubscribe();
   }
 
-  public get isPending(): Observable<boolean> {
-    return this.store.select(selectIsUserPending);
-  }
-
   public get name(): AbstractControl | null {
     return this.updateUserForm.get('name');
   }
