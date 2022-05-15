@@ -30,3 +30,15 @@ mat-form-field {
   width: 100%;
   margin-bottom: 0.5rem;
 }
+
+.form {
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-card {
+    max-width: 450px;
+    flex-grow: 1;
+  }
+}

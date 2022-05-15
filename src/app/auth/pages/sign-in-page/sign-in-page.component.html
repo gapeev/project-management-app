@@ -1,27 +1,41 @@
-<mat-progress-bar *ngIf="isPending | async" mode="indeterminate"></mat-progress-bar>
 <app-notification (confirm)="onErrorConfirm()"></app-notification>
-<form #ngForm="ngForm" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-  <h2>{{ 'LOGIN-PAGE.TITLE' | translate }}</h2>
 
-  <mat-form-field appearance="fill">
-    <mat-label>{{ 'LOGIN-PAGE.INPUTS.LOGIN' | translate }}</mat-label>
-    <input type="text" matInput formControlName="login" />
-    <mat-error *ngIf="login?.hasError('required')"
-      >{{ 'LOGIN-PAGE.ERROR-TEXT.LOGIN' | translate
-      }}<strong>{{ 'LOGIN-PAGE.REQUIRED' | translate }}</strong></mat-error
-    >
-  </mat-form-field>
+<div class="page-container form-container">
+  <form class="form-card" #ngForm="ngForm" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-title>
+        <h2>{{ 'LOGIN-PAGE.TITLE' | translate }}</h2>
+      </mat-card-title>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'LOGIN-PAGE.INPUTS.LOGIN' | translate }}</mat-label>
+          <input type="text" matInput formControlName="login" />
+          <mat-error *ngIf="login?.hasError('required')"
+            >{{ 'LOGIN-PAGE.ERROR-TEXT.LOGIN' | translate
+            }}<strong>{{ 'LOGIN-PAGE.REQUIRED' | translate }}</strong></mat-error
+          >
+        </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>{{ 'LOGIN-PAGE.INPUTS.PASSWORD' | translate }}</mat-label>
-    <input type="password" matInput formControlName="password" />
-    <mat-error *ngIf="password?.hasError('required')">
-      {{ 'LOGIN-PAGE.ERROR-TEXT.PASSWORD' | translate
-      }}<strong>{{ 'LOGIN-PAGE.REQUIRED' | translate }}</strong>
-    </mat-error>
-  </mat-form-field>
-
-  <button mat-stroked-button type="submit" [disabled]="ngForm.invalid || isSubmitting">
-    {{ 'LOGIN-PAGE.BUTTON' | translate }}
-  </button>
-</form>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'LOGIN-PAGE.INPUTS.PASSWORD' | translate }}</mat-label>
+          <input type="password" matInput formControlName="password" />
+          <mat-error *ngIf="password?.hasError('required')">
+            {{ 'LOGIN-PAGE.ERROR-TEXT.PASSWORD' | translate
+            }}<strong>{{ 'LOGIN-PAGE.REQUIRED' | translate }}</strong>
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="form-actions" align="end">
+        <a mat-button routerLink="/auth/sign-up">Registration</a>
+        <button
+          mat-stroked-button
+          type="submit"
+          color="primary"
+          [disabled]="ngForm.invalid || isSubmitting"
+        >
+          {{ 'LOGIN-PAGE.BUTTON' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
