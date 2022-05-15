@@ -10,6 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
+import { RouterModule } from '@angular/router';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
 import { LoadingBarComponent } from './components/loading-bar/loading-bar.component';
 import HttpInterceptors from './interceptors';
@@ -30,6 +31,7 @@ import BoardEffects from '@store/effects/board.effects';
     StoreRouterConnectingModule.forRoot(),
     MaterialModule,
     FormsModule,
+    RouterModule,
   ],
   exports: [MaterialModule, FooterComponent, HeaderComponent, LoadingBarComponent],
   providers: [HttpInterceptors],
