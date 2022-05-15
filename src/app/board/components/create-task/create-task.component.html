@@ -3,7 +3,7 @@
     <mat-icon class="icon" aria-hidden="false" aria-label="add circle icon">add_circle</mat-icon>
     Create Task
   </h1>
-  <form #ngForm="ngForm" [formGroup]="createTaskForm">
+  <form class="form-content" #ngForm="ngForm" [formGroup]="createTaskForm">
     <mat-form-field appearance="fill">
       <mat-label>Title</mat-label>
       <input type="text" matInput formControlName="title" />
