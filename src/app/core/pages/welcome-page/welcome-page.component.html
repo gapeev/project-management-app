@@ -1,7 +1,20 @@
-<p>welcome-page works!</p>
-<button mat-stroked-button *ngIf="isUserAuth | async" (click)="signOut()">
-  {{ 'WELCOME-PAGE.LOGOUT' | translate }}
-</button>
-<button mat-stroked-button *ngIf="isUserAuth | async" (click)="deleteUser()">
-  {{ 'WELCOME-PAGE.DELETE' | translate }}
-</button>
+
+<div class="welcome-page">
+  <div class="welcome-page__container">
+    <div class="greeting">
+      <h1>App Tracker</h1>
+      <p>Работайте над идеями в команде!
+        В приложении есть всё <br>необходимое для
+        совместной работы с задачами и проектами. </p>
+
+      <button mat-stroked-button *ngIf="isUserAuth | async" (click)="signOut()">
+        {{ 'WELCOME-PAGE.LOGOUT' | translate }}
+      </button>
+      <button mat-stroked-button *ngIf="isUserAuth | async" (click)="deleteUser()">
+        {{ 'WELCOME-PAGE.DELETE' | translate }}
+      </button>
+
+    </div>
+  </div>
+</div>
+
