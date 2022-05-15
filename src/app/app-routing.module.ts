@@ -28,6 +28,7 @@ const routes: Routes = [
     path: 'boards',
     loadChildren: () => import('./board/board.module').then((m) => m.BoardModule),
     canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
   },
 ];
 
