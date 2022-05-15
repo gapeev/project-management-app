@@ -9,7 +9,6 @@ import { CreateColumnComponent } from './components/create-column/create-column.
 import { CreateTaskComponent } from './components/create-task/create-task.component';
 import { UpdateTaskComponent } from './components/update-task/update-task.component';
 import { SearchTasksComponent } from './components/search-tasks/search-tasks.component';
-import { SearchTasksPageComponent } from './pages/search-tasks-page/search-tasks-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import { SearchTasksPageComponent } from './pages/search-tasks-page/search-tasks
     CreateTaskComponent,
     UpdateTaskComponent,
     SearchTasksComponent,
-    SearchTasksPageComponent,
   ],
   imports: [CommonModule, BoardRoutingModule, SharedModule],
 })
