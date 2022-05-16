@@ -1,7 +1,76 @@
 $font: Roboto, "Helvetica Neue", sans-serif;
 $primary: #3f51b5;
-$dark: #020024FF;
+
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #27b6a7 50%, $primary 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgb(73, 71, 71);
+  box-sizing:border-box;
+  padding:10vmin;
+  text-align:center;
+  width: 75%;
+  margin: 50px auto 0;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+@media (max-width: 790px) {
+  .content {
+    width: 90%;
+  }
+  .title {
+    font-size: 2.5rem !important;
+  }
+  .greeting-text {
+    width: inherit;
+    display: flex;
+    font-size: 1.2rem !important;
+  }
+  .icon {
+    height: 50px!important;
+  }
+  .list {
+    padding: 0 0 0 5px!important;
+    li {
+      font-size: 16px!important;
+    }
+  }
+  .functions {
+    flex-direction: column;
+  }
+  .functions-management, .functions-settings {
+    width: 100%!important;
+  }
+}
 
 .welcome-page {
   height: 100vh;
@@ -89,75 +158,7 @@ $dark: #020024FF;
   line-height: 4rem;
   font-family:monospace;
 }
-.bg {
-  animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #27b6a7 50%, $primary 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
-}
 
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:4s;
-}
-
-.bg3 {
-  animation-duration:5s;
-}
-
-
-.content {
-  background-color:rgba(255,255,255,.8);
-  border-radius:.25em;
-  box-shadow:0 0 .25em rgba(0,0,0,.25);
-  box-sizing:border-box;
-  padding:10vmin;
-  text-align:center;
-  width: 65%;
-  margin: 50px auto 0;
-}
-
-@keyframes slide {
-  0% {
-    transform:translateX(-25%);
-  }
-  100% {
-    transform:translateX(25%);
-  }
-}
-@media (max-width: 790px) {
-  .content {
-    width: 90%;
-  }
-  .title {
-      font-size: 2.5rem !important;
-  }
-  .greeting-text {
-    width: inherit;
-    display: flex;
-    font-size: 1.2rem !important;
-  }
-  .icon {
-    height: 40px!important;
-  }
-  .list {
-    padding: 0 0 0 5px!important;
-    li {
-      font-size: 16px!important;
-    }
-  }
-  .functions {
-    flex-direction: column;
-  }
-  .functions-management, .functions-settings {
-    width: 100%!important;
-  }
-}
 
 .team-page {
   height: 88vh;
@@ -166,15 +167,21 @@ $dark: #020024FF;
     max-width: 1440px;
     font-family: $font;
     display: flex;
+    height: 75%;
     .team-content {
-      width: 95%;
       display: flex;
       flex-direction: column;
       &__title {
-        color: $dark;
+        color: $primary;
+      }
+      .mat-card-content {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
       }
       .people {
         margin-top: 10px;
+        width: 33%;
         display: flex;
         align-items: center;
         .people-icon {
@@ -187,7 +194,7 @@ $dark: #020024FF;
           font-size: 22px;
           font-family: $font;
           font-weight: bold;
-          color: $dark;
+          color: $primary;
         }
         .description {
           display: flex;
@@ -195,15 +202,32 @@ $dark: #020024FF;
           font-size: 16px;
           font-family: $font;
           text-align: left;
-          color: $dark;
+          color: $primary;
           margin-left: 10px;
         }
       }
     }
     .project-description {
       font-size: 18px;
-      color: $dark;
+      color: $primary;
       font-family: $font;
     }
   }
+}
+
+@media (max-width: 1200px) {
+  .people {
+    width: 50%!important;
+  }
+}
+
+@media (max-width: 790px) {
+  .people {
+    width: 100%!important;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: $primary;
 }
