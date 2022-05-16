@@ -3,10 +3,23 @@
   top: 0;
   z-index: 100;
 }
+
 .header {
   padding: 1% 4%;
-  justify-content: space-between;
   &.scrolled {
     background: #30396b;
   }
+}
+
+.toolbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.logo {
+  margin-right: auto;
 }
