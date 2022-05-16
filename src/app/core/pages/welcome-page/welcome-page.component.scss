@@ -1,53 +1,13 @@
 $font: Roboto, "Helvetica Neue", sans-serif;
 $primary: #3f51b5;
+$dark: #020024FF;
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
-.bg {
-  animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #27b6a7 50%, $primary 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
-}
-
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:4s;
-}
-
-.bg3 {
-  animation-duration:5s;
-}
-
-.content {
-  background-color:rgba(255,255,255,.8);
-  border-radius:.25em;
-  box-shadow:0 0 .25em rgba(0,0,0,.25);
-  box-sizing:border-box;
-  left:50%;
-  padding:10vmin;
-  position:fixed;
-  text-align:center;
-  top:50%;
-  width: 60%;
-  transform:translate(-50%, -50%);
-}
-
-@keyframes slide {
-  0% {
-    transform:translateX(-25%);
-  }
-  100% {
-    transform:translateX(25%);
-  }
-}
 .welcome-page {
-  display: flex;
-  &__container {
+  height: 100vh;
+  width: inherit;
+  overflow:hidden;
+  &__container, {
     align-items: center;
     margin: 0 auto;
     max-width: 1440px;
@@ -62,14 +22,6 @@ $primary: #3f51b5;
       background-color: inherit;
       flex-direction: column;
       justify-content: space-evenly;
-      h1 {
-        color: $primary;
-        font-weight: bold;
-        font-size: 4rem;
-        letter-spacing: 3px;
-        line-height: 4rem;
-        font-family:monospace;
-      }
       p {
         margin: 0;
         font-family: $font;
@@ -86,11 +38,6 @@ $primary: #3f51b5;
         font-size: 18px;
         height: 45px;
         width: 250px;
-      }
-      .registration-button:hover {
-        transition-duration: 1000ms;
-        background: rgb(2,0,36);
-        background: linear-gradient(90deg, $primary 0%, $primary 35%, #a14a8b 100%);
       }
     }
     .functions {
@@ -124,6 +71,7 @@ $primary: #3f51b5;
     }
   }
 }
+
 .greeting-line {
   margin: 20px 0;
   padding: 0;
@@ -133,11 +81,60 @@ $primary: #3f51b5;
   border-top: 1px solid $primary;
 }
 
+.title {
+  color: $primary;
+  font-weight: bold;
+  font-size: 4rem;
+  letter-spacing: 3px;
+  line-height: 4rem;
+  font-family:monospace;
+}
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #27b6a7 50%, $primary 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  padding:10vmin;
+  text-align:center;
+  width: 65%;
+  margin: 50px auto 0;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
 @media (max-width: 790px) {
   .content {
     width: 90%;
   }
-  .greeting-title {
+  .title {
       font-size: 2.5rem !important;
   }
   .greeting-text {
@@ -159,5 +156,54 @@ $primary: #3f51b5;
   }
   .functions-management, .functions-settings {
     width: 100%!important;
+  }
+}
+
+.team-page {
+  height: 88vh;
+  &__container {
+    margin: 0 auto;
+    max-width: 1440px;
+    font-family: $font;
+    display: flex;
+    .team-content {
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      &__title {
+        color: $dark;
+      }
+      .people {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        .people-icon {
+          height: 100px;
+          width: auto;
+        }
+        .profile {
+          display: flex;
+          flex-direction: column;
+          font-size: 22px;
+          font-family: $font;
+          font-weight: bold;
+          color: $dark;
+        }
+        .description {
+          display: flex;
+          flex-direction: column;
+          font-size: 16px;
+          font-family: $font;
+          text-align: left;
+          color: $dark;
+          margin-left: 10px;
+        }
+      }
+    }
+    .project-description {
+      font-size: 18px;
+      color: $dark;
+      font-family: $font;
+    }
   }
 }

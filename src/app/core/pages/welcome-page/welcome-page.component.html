@@ -1,10 +1,11 @@
+<div class="welcome-page">
 <div class="bg"></div>
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
 <div class="content">
     <div class="welcome-page__container" id="welcome-page">
       <mat-toolbar class="greeting">
-        <h1 class="greeting-title">App Tracker</h1>
+        <h1 class="title">App Tracker</h1>
         <p class="greeting-text">Планируйте проекты и управляйте задачами!</p>
     </mat-toolbar>
       <hr class="greeting-line">
@@ -26,6 +27,50 @@
           </ul>
         </div>
       </div>
-      <button mat-raised-button color="primary" class="about">О команде</button>
+      <button mat-raised-button color="primary" class="about" (click)="scrollTo()">О команде</button>
+  </div>
+</div>
+</div>
+<div class="team-page" id="team-page">
+  <div class="team-page__container">
+    <div class="team-content content">
+      <h1 class="team-content__title title">
+    About our team
+      </h1>
+      <div class="people">
+        <div class="profile">
+          <p>Dima</p>
+          <img src="../../../../assets/png/4576175.png" alt="check-list" class="people-icon">
+        </div>
+        <div class="description">
+        <p>team leader, frontend developer</p>
+        <p>board-module, core-module, shared module, store, app module</p>
+        </div>
+      </div>
+      <div class="people">
+        <div class="profile">
+          <p>Nastya</p>
+          <img src="../../../../assets/png/3234886.png" alt="check-list" class="people-icon">
+        </div>
+        <div class="description">
+        <p>frontend developer</p>
+        <p>board-module, core-module</p>
+        </div>
+      </div>
+      <div class="people">
+        <div class="profile">
+          <p>Valeria</p>
+          <img src="../../../../assets/png/3750030.png" alt="check-list" class="people-icon">
+        </div>
+        <div class="description">
+        <p>frontend developer</p>
+        <p>auth-module, core-module, app-module</p>
+        </div>
+      </div>
+      <hr class="greeting-line">
+      <p class="project-description">
+        App tracker project, angular 2022Q1, rss-school
+      </p>
+    </div>
   </div>
 </div>
