@@ -1,0 +1,9 @@
+<mat-nav-list class="list">
+  <div *ngFor="let link of (isAuth | async) ? authLinks : nonAuthLinks">
+    <a class="item" mat-list-item [routerLink]="[link.href]" (click)="sidenav.close()">
+      <mat-icon class="item-icon" matListIcon>{{ link.icon }}</mat-icon>
+      {{ link.text }}
+    </a>
+    <mat-divider class="divider" *ngIf="link.hasDivider"></mat-divider>
+  </div>
+</mat-nav-list>

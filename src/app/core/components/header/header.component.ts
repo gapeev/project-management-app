@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { deleteUserPending, signOut } from '@store/actions/user.actions';
@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { selectIsUserAuth, selectUserLogin } from '@store/selectors/user.selectors';
 import { DeleteDialogComponent } from '@shared/components/delete-dialog/delete-dialog.component';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,9 @@ import { DeleteDialogComponent } from '@shared/components/delete-dialog/delete-d
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @Input()
+  public sidenav!: MatSidenav;
+
   isLangToggle = false;
   isPageScrolled = false;
   headerClassList: string[] = ['header'];

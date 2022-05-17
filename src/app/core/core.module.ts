@@ -18,9 +18,16 @@ import reducers from '@store/reducers';
 import { environment } from '../../environments/environment';
 import UserEffects from '@store/effects/user.effects';
 import BoardEffects from '@store/effects/board.effects';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
-  declarations: [WelcomePageComponent, FooterComponent, HeaderComponent, LoadingBarComponent],
+  declarations: [
+    WelcomePageComponent,
+    FooterComponent,
+    HeaderComponent,
+    LoadingBarComponent,
+    SidenavComponent,
+  ],
   imports: [
     CommonModule,
     SharedModule,
@@ -33,7 +40,13 @@ import BoardEffects from '@store/effects/board.effects';
     FormsModule,
     RouterModule,
   ],
-  exports: [MaterialModule, FooterComponent, HeaderComponent, LoadingBarComponent],
+  exports: [
+    MaterialModule,
+    FooterComponent,
+    HeaderComponent,
+    LoadingBarComponent,
+    SidenavComponent,
+  ],
   providers: [HttpInterceptors],
 })
 export class CoreModule {}

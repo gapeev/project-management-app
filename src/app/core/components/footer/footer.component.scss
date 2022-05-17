@@ -3,12 +3,15 @@
 }
 
 .footer {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   height: 100%;
   &__authors {
     height: 100%;

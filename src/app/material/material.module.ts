@@ -17,6 +17,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 const MaterialComponents = [
   MatFormFieldModule,
@@ -36,6 +38,8 @@ const MaterialComponents = [
   MatCheckboxModule,
   MatCardModule,
   MatMenuModule,
+  MatSidenavModule,
+  MatListModule,
 ];
 
 @NgModule({
