@@ -3,41 +3,42 @@
 }
 
 .footer {
-  padding: 1% 4%;
+  width: 1200px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1rem;
+  padding: 1rem;
+  height: 100%;
   &__authors {
-    width: 33%;
     height: 100%;
     display: flex;
+    gap: 1.5rem;
     justify-content: space-between;
-    flex-direction: column;
-    font-size: 0.8rem;
-    line-height: 0.8rem;
+    align-items: center;
     &__link {
       color: #ffffff;
       text-decoration: none;
       transition: all 0.3s;
       width: fit-content;
       &:hover {
-        filter: invert(1);
+        text-decoration: underline;
       }
     }
   }
-  &__year {
-    font-size: 1.5rem;
-  }
   &__logo {
-    width: 33%;
-    height: 100%;
+    width: 7rem;
+    height: 84%;
     background-image: url(../../../../assets/svg/logo.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: right;
     transition: all 0.3s;
-    &:hover {
-      transform: scale(1.1);
-    }
+  }
+}
+@media (max-width: 680px) {
+  .footer__authors {
+    display: none;
   }
 }
