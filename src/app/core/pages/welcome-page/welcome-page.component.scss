@@ -43,34 +43,6 @@ $primary: #3f51b5;
     transform:translateX(25%);
   }
 }
-@media (max-width: 790px) {
-  .content {
-    width: 90%;
-  }
-  .title {
-    font-size: 2.5rem !important;
-  }
-  .greeting-text {
-    width: inherit;
-    display: flex;
-    font-size: 1.2rem !important;
-  }
-  .icon {
-    height: 50px!important;
-  }
-  .list {
-    padding: 0 0 0 5px!important;
-    li {
-      font-size: 16px!important;
-    }
-  }
-  .functions {
-    flex-direction: column;
-  }
-  .functions-management, .functions-settings {
-    width: 100%!important;
-  }
-}
 
 .welcome-page {
   height: 100vh;
@@ -127,17 +99,45 @@ $primary: #3f51b5;
           }
         }
       }
-      .icon {
-        height: 100px;
-        width: auto;
-      }
-
     }
     .about {
       width: 200px;
       font-size: 18px;
       font-family: $font;
     }
+  }
+}
+.icon {
+  height: 100px;
+  width: auto;
+}
+
+@media (max-width: 790px) {
+  .content {
+    width: 90%;
+  }
+  .title {
+    font-size: 2.5rem !important;
+  }
+  .greeting-text {
+    width: inherit;
+    display: flex;
+    font-size: 1.2rem !important;
+  }
+  .icon {
+    height: 50px!important;
+  }
+  .list {
+    padding: 0 0 0 5px!important;
+    li {
+      font-size: 16px!important;
+    }
+  }
+  .functions {
+    flex-direction: column;
+  }
+  .functions-management, .functions-settings {
+    width: 100%!important;
   }
 }
 
@@ -158,7 +158,6 @@ $primary: #3f51b5;
   line-height: 4rem;
   font-family:monospace;
 }
-
 
 .team-page {
   height: 88vh;

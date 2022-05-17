@@ -16,20 +16,22 @@ import reducers from '@store/reducers';
 import { environment } from '../../environments/environment';
 import UserEffects from '@store/effects/user.effects';
 import BoardEffects from '@store/effects/board.effects';
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
   declarations: [WelcomePageComponent, FooterComponent, HeaderComponent],
-  imports: [
-    CommonModule,
-    SharedModule,
-    HttpClientModule,
-    StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([UserEffects, BoardEffects]),
-    StoreRouterConnectingModule.forRoot(),
-    MaterialModule,
-    FormsModule,
-  ],
+    imports: [
+        CommonModule,
+        SharedModule,
+        HttpClientModule,
+        StoreModule.forRoot(reducers),
+        StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+        EffectsModule.forRoot([UserEffects, BoardEffects]),
+        StoreRouterConnectingModule.forRoot(),
+        MaterialModule,
+        FormsModule,
+        MatCardModule,
+    ],
   exports: [MaterialModule, FooterComponent, HeaderComponent],
   providers: [HttpInterceptors],
 })
