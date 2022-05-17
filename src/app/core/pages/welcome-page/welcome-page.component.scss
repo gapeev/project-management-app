@@ -1,13 +1,13 @@
-$font: Roboto, "Helvetica Neue", sans-serif;
+$font: Roboto, 'Helvetica Neue', sans-serif;
 $primary: #3f51b5;
 
 .welcome-page {
   height: 100vh;
   width: inherit;
   overflow: hidden;
-  &__container, {
+  &__container {
     align-items: center;
-    margin: 0 auto;
+    margin: 4rem auto 0;
     max-width: 1440px;
     font-family: $font;
     height: 100%;
@@ -40,7 +40,8 @@ $primary: #3f51b5;
     }
     .functions {
       display: flex;
-      .functions-management, .functions-settings {
+      .functions-management,
+      .functions-settings {
         display: flex;
         width: 50%;
         align-items: center;
@@ -72,7 +73,7 @@ $primary: #3f51b5;
   background-image: linear-gradient(-60deg, #27b6a7 50%, $primary 50%);
   bottom: 0;
   left: -50%;
-  opacity: .5;
+  opacity: 0.5;
   right: -50%;
   top: 0;
   position: fixed;
@@ -89,9 +90,9 @@ $primary: #3f51b5;
 }
 
 .content {
-  background-color: rgba(255, 255, 255, .8);
-  border-radius: .25em;
-  box-shadow: 0 0 .25em rgb(73, 71, 71);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.25em rgb(73, 71, 71);
   box-sizing: border-box;
   padding: 10vmin;
   text-align: center;
@@ -138,7 +139,8 @@ $primary: #3f51b5;
   .functions {
     flex-direction: column;
   }
-  .functions-management, .functions-settings {
+  .functions-management,
+  .functions-settings {
     width: 100% !important;
   }
 }
