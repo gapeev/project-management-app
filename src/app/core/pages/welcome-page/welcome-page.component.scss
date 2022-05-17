@@ -1,53 +1,10 @@
 $font: Roboto, "Helvetica Neue", sans-serif;
 $primary: #3f51b5;
 
-@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
-
-.bg {
-  animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #27b6a7 50%, $primary 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
-}
-
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:4s;
-}
-
-.bg3 {
-  animation-duration:5s;
-}
-
-.content {
-  background-color:rgba(255,255,255,.8);
-  border-radius:.25em;
-  box-shadow:0 0 .25em rgb(73, 71, 71);
-  box-sizing:border-box;
-  padding:10vmin;
-  text-align:center;
-  width: 75%;
-  margin: 50px auto 0;
-}
-
-@keyframes slide {
-  0% {
-    transform:translateX(-25%);
-  }
-  100% {
-    transform:translateX(25%);
-  }
-}
-
 .welcome-page {
   height: 100vh;
   width: inherit;
-  overflow:hidden;
+  overflow: hidden;
   &__container, {
     align-items: center;
     margin: 0 auto;
@@ -63,6 +20,7 @@ $primary: #3f51b5;
       background-color: inherit;
       flex-direction: column;
       justify-content: space-evenly;
+
       p {
         margin: 0;
         font-family: $font;
@@ -81,15 +39,19 @@ $primary: #3f51b5;
         width: 250px;
       }
     }
+
     .functions {
       display: flex;
+
       .functions-management, .functions-settings {
         display: flex;
         width: 50%;
         align-items: center;
+
         ul {
           text-align: left;
           padding: 0 0 0 10px;
+
           li {
             font-family: $font;
             list-style-type: none;
@@ -107,6 +69,49 @@ $primary: #3f51b5;
     }
   }
 }
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #27b6a7 50%, $primary 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: .25em;
+  box-shadow: 0 0 .25em rgb(73, 71, 71);
+  box-sizing: border-box;
+  padding: 10vmin;
+  text-align: center;
+  width: 75%;
+  margin: 50px auto 0;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
 .icon {
   height: 100px;
   width: auto;
@@ -125,19 +130,20 @@ $primary: #3f51b5;
     font-size: 1.2rem !important;
   }
   .icon {
-    height: 50px!important;
+    height: 50px !important;
   }
   .list {
-    padding: 0 0 0 5px!important;
+    padding: 0 0 0 5px !important;
+
     li {
-      font-size: 16px!important;
+      font-size: 16px !important;
     }
   }
   .functions {
     flex-direction: column;
   }
   .functions-management, .functions-settings {
-    width: 100%!important;
+    width: 100% !important;
   }
 }
 
@@ -156,37 +162,44 @@ $primary: #3f51b5;
   font-size: 4rem;
   letter-spacing: 3px;
   line-height: 4rem;
-  font-family:monospace;
+  font-family: monospace;
 }
 
 .team-page {
   height: 88vh;
+
   &__container {
     margin: 0 auto;
     max-width: 1440px;
     font-family: $font;
     display: flex;
     height: 75%;
+
     .team-content {
       display: flex;
       flex-direction: column;
+
       &__title {
         color: $primary;
       }
+
       .mat-card-content {
         display: flex;
         flex-wrap: wrap;
         height: 100%;
       }
+
       .people {
         margin-top: 10px;
         width: 33%;
         display: flex;
         align-items: center;
+
         .people-icon {
           height: 100px;
           width: auto;
         }
+
         .profile {
           display: flex;
           flex-direction: column;
@@ -195,6 +208,7 @@ $primary: #3f51b5;
           font-weight: bold;
           color: $primary;
         }
+
         .description {
           display: flex;
           flex-direction: column;
@@ -206,6 +220,7 @@ $primary: #3f51b5;
         }
       }
     }
+
     .project-description {
       font-size: 18px;
       color: $primary;
@@ -216,13 +231,13 @@ $primary: #3f51b5;
 
 @media (max-width: 1200px) {
   .people {
-    width: 50%!important;
+    width: 50% !important;
   }
 }
 
 @media (max-width: 790px) {
   .people {
-    width: 100%!important;
+    width: 100% !important;
   }
 }
 

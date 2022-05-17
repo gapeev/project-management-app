@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from '../material/material.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormsModule } from '@angular/forms';
@@ -28,10 +29,11 @@ import BoardEffects from '@store/effects/board.effects';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([UserEffects, BoardEffects]),
     StoreRouterConnectingModule.forRoot(),
+    MaterialModule,
     FormsModule,
     RouterModule,
   ],
-  exports: [FooterComponent, HeaderComponent, LoadingBarComponent],
+  exports: [MaterialModule, FooterComponent, HeaderComponent, LoadingBarComponent],
   providers: [HttpInterceptors],
 })
 export class CoreModule {}
