@@ -11,6 +11,7 @@ import {
   deleteTask,
   fetchBoard,
   fetchBoardFailure,
+  fetchBoardInit,
   moveTask,
   updateColumn,
 } from '@store/actions/board.actions';
@@ -33,7 +34,7 @@ export class BoardPageComponent implements OnInit {
 
   public ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      this.store.dispatch(fetchBoard({ id: params['id'] }));
+      this.store.dispatch(fetchBoardInit({ id: params['id'] }));
     });
     this.board$ = this.store.select(selectBoard);
   }

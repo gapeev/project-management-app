@@ -1,10 +1,20 @@
-<mat-progress-bar *ngIf="isPending | async" mode="indeterminate"></mat-progress-bar>
-<button mat-raised-button (click)="createBoard()">
-  {{ 'BOARDS-PAGE.BUTTONS.CREATE' | translate }}
-</button>
-<div class="board" *ngFor="let board of boards$ | async">
-  <a [routerLink]="['/boards', board.id]">{{ board.id }} | {{ board.title }}</a>
-  <button mat-raised-button type="button" (click)="deleteBoard(board.id, board.title)">
-    {{ 'BOARDS-PAGE.BUTTONS.DELETE' | translate }}
-  </button>
+<div class="page-container">
+  <div class="boards">
+    <mat-card class="board" *ngFor="let board of boards$ | async">
+      <mat-card-title>{{ board.title }}</mat-card-title>
+      <mat-card-content>
+        <p>{{ board.description }}</p>
+      </mat-card-content>
+      <mat-card-actions class="actions">
+        <button mat-stroked-button color="warn" (click)="deleteBoard(board.id, board.title)">
+          {{ 'BOARDS-PAGE.BUTTONS.DELETE' | translate }}
+        </button>
+        <button [routerLink]="['/boards', board.id]" mat-stroked-button color="primary">
+          Open
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <app-search-tasks></app-search-tasks>
 </div>

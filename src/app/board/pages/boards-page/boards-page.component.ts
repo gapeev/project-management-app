@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { isObservable, Observable } from 'rxjs';
 import { selectBoards, selectIsBoardPending } from '@store/selectors/board.selectors';
 import { Board } from '@shared/models/board.model';
 import { deleteBoard, fetchBoards } from '@store/actions/board.actions';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateBoardComponent } from '../../components/create-board/create-board.component';
 import { DeleteDialogComponent } from '@shared/components/delete-dialog/delete-dialog.component';
 
 @Component({
@@ -21,16 +20,6 @@ export class BoardsPageComponent implements OnInit {
     this.store.dispatch(fetchBoards());
   }
 
-  public get isPending(): Observable<boolean> {
-    return this.store.select(selectIsBoardPending);
-  }
-
-  public createBoard(): void {
-    const dialogRef = this.dialog.open(CreateBoardComponent, {
-      width: '400px',
-    });
-  }
-
   public deleteBoard(boardId: string, boardTitle: string): void {
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
       width: '400px',
@@ -43,6 +32,10 @@ export class BoardsPageComponent implements OnInit {
       }
       this.store.dispatch(deleteBoard({ boardId }));
     });
+  }
+
+  public get isPending(): Observable<boolean> {
+    return this.store.select(selectIsBoardPending);
   }
 
   constructor(private store: Store, private dialog: MatDialog) {}

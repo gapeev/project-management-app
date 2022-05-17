@@ -7,6 +7,11 @@ import { WelcomePageComponent } from '@core/pages/welcome-page/welcome-page.comp
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/boards',
+    pathMatch: 'full',
+  },
+  {
+    path: 'welcome',
     component: WelcomePageComponent,
   },
   {
@@ -23,6 +28,7 @@ const routes: Routes = [
     path: 'boards',
     loadChildren: () => import('./board/board.module').then((m) => m.BoardModule),
     canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
   },
 ];
 

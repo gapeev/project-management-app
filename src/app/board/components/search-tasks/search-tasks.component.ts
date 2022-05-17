@@ -1,5 +1,6 @@
 import {
   AfterViewChecked,
+  AfterViewInit,
   ChangeDetectorRef,
   Component,
   OnDestroy,
@@ -7,7 +8,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Search, TaskSearch } from '@shared/models/board.model';
+import { TaskSearch } from '@shared/models/board.model';
 import { getAllTasks } from '@store/actions/board.actions';
 import { selectAllTasks, selectIsBoardPending } from '@store/selectors/board.selectors';
 import { Observable, Subscription } from 'rxjs';
@@ -18,9 +19,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { Paginator } from './paginator';
 
 @Component({
-  selector: 'app-search-tasks-page',
-  templateUrl: './search-tasks-page.component.html',
-  styleUrls: ['./search-tasks-page.component.scss'],
+  selector: 'app-search-tasks',
+  templateUrl: './search-tasks.component.html',
+  styleUrls: ['./search-tasks.component.scss'],
   providers: [
     {
       provide: MatPaginatorIntl,
@@ -30,7 +31,7 @@ import { Paginator } from './paginator';
     },
   ],
 })
-export class SearchTasksPageComponent implements OnInit, OnDestroy, AfterViewChecked {
+export class SearchTasksComponent implements OnInit, OnDestroy, AfterViewInit, AfterViewChecked {
   public searchForm!: FormGroup;
 
   public tasks$!: Observable<TaskSearch[]>;
@@ -41,7 +42,8 @@ export class SearchTasksPageComponent implements OnInit, OnDestroy, AfterViewChe
 
   public dataSource!: MatTableDataSource<TaskSearch>;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator)
+  public paginator!: MatPaginator;
 
   public ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
@@ -71,11 +73,18 @@ export class SearchTasksPageComponent implements OnInit, OnDestroy, AfterViewChe
     this.subscriptions$.push(
       this.store.select(selectAllTasks).subscribe((tasks) => {
         this.dataSource = new MatTableDataSource<TaskSearch>(tasks);
-        this.dataSource.paginator = this.paginator;
       })
     );
 
     this.store.dispatch(getAllTasks());
+  }
+
+  public ngAfterViewInit(): void {
+    this.subscriptions$.push(
+      this.store.select(selectAllTasks).subscribe((tasks) => {
+        this.dataSource.paginator = this.paginator;
+      })
+    );
   }
 
   public getTableDataSource(tasks: TaskSearch[]): MatTableDataSource<TaskSearch> {

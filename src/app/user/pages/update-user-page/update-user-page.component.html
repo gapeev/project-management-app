@@ -1,40 +1,49 @@
-<mat-progress-bar *ngIf="isPending | async" mode="indeterminate"></mat-progress-bar>
 <app-notification (confirm)="onErrorConfirm()"></app-notification>
-<form #ngForm="ngForm" [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
-  <h2>{{ 'UPDATE-USER.TITLE' | translate }}</h2>
 
-  <mat-form-field appearance="fill">
-    <mat-label>{{ 'UPDATE-USER.INPUTS.NAME' | translate }}</mat-label>
-    <input type="text" matInput formControlName="name" />
-    <mat-error *ngIf="name?.hasError('required')"
-      >{{ 'UPDATE-USER.ERROR-TEXT.NAME' | translate
-      }}<strong>{{ 'UPDATE-USER.REQUIRED.NAME' | translate }}</strong></mat-error
-    >
-  </mat-form-field>
+<div class="page-container form-container">
+  <form class="form-card" #ngForm="ngForm" [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-title>
+        <h2>{{ 'UPDATE-USER.TITLE' | translate }}</h2>
+      </mat-card-title>
 
-  <mat-form-field appearance="fill">
-    <mat-label>{{ 'UPDATE-USER.INPUTS.LOGIN' | translate }}</mat-label>
-    <input type="text" matInput formControlName="login" />
-    <mat-error *ngIf="login?.hasError('required')"
-      >{{ 'UPDATE-USER.ERROR-TEXT.LOGIN' | translate
-      }}<strong>{{ 'UPDATE-USER.REQUIRED.OTHER' | translate }}</strong></mat-error
-    >
-  </mat-form-field>
+      <mat-card-content class="form-content">
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'UPDATE-USER.INPUTS.NAME' | translate }}</mat-label>
+          <input type="text" matInput formControlName="name" />
+          <mat-error *ngIf="name?.hasError('required')"
+            >{{ 'UPDATE-USER.ERROR-TEXT.NAME' | translate
+            }}<strong>{{ 'UPDATE-USER.REQUIRED.NAME' | translate }}</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'UPDATE-USER.INPUTS.LOGIN' | translate }}</mat-label>
+          <input type="text" matInput formControlName="login" />
+          <mat-error *ngIf="login?.hasError('required')"
+            >{{ 'UPDATE-USER.ERROR-TEXT.LOGIN' | translate
+            }}<strong>{{ 'UPDATE-USER.REQUIRED.OTHER' | translate }}</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'UPDATE-USER.INPUTS.PASSWORD' | translate }}</mat-label>
+          <input type="password" matInput formControlName="password" />
+          <mat-error *ngIf="password?.hasError('required')">
+            {{ 'UPDATE-USER.ERROR-TEXT.PASSWORD' | translate }}
+            <strong>{{ 'UPDATE-USER.REQUIRED.OTHER' | translate }}</strong>
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
 
-  <mat-form-field appearance="fill">
-    <mat-label>{{ 'UPDATE-USER.INPUTS.PASSWORD' | translate }}</mat-label>
-    <input type="password" matInput formControlName="password" />
-    <mat-error *ngIf="password?.hasError('required')">
-      {{ 'UPDATE-USER.ERROR-TEXT.PASSWORD' | translate }}
-      <strong>{{ 'UPDATE-USER.REQUIRED.OTHER' | translate }}</strong>
-    </mat-error>
-  </mat-form-field>
-
-  <button
-    mat-stroked-button
-    type="submit"
-    [disabled]="ngForm.invalid || isSubmitting || updateUserForm.pristine"
-  >
-    {{ 'UPDATE-USER.BUTTON' | translate }}
-  </button>
-</form>
+      <mat-card-actions class="form-actions" align="end">
+        <button
+          mat-stroked-button
+          type="submit"
+          color="primary"
+          [disabled]="ngForm.invalid || isSubmitting || updateUserForm.pristine"
+        >
+          {{ 'UPDATE-USER.BUTTON' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
