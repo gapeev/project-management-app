@@ -12,6 +12,6 @@ export class WelcomePageComponent {
 
   public scrollTo() {
     this.viewportScroller.scrollToAnchor('team-page');
-
   }
+
 }

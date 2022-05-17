@@ -17,10 +17,9 @@ $primary: #3f51b5;
     .greeting {
       height: 22vh;
       display: flex;
-      background-color: inherit;
       flex-direction: column;
       justify-content: space-evenly;
-
+      background-color: rgba(255, 255, 255, 0);
       p {
         margin: 0;
         font-family: $font;
@@ -39,15 +38,12 @@ $primary: #3f51b5;
         width: 250px;
       }
     }
-
     .functions {
       display: flex;
-
       .functions-management, .functions-settings {
         display: flex;
         width: 50%;
         align-items: center;
-
         ul {
           text-align: left;
           padding: 0 0 0 10px;
@@ -77,10 +73,9 @@ $primary: #3f51b5;
   bottom: 0;
   left: -50%;
   opacity: .5;
-  position: fixed;
   right: -50%;
   top: 0;
-  z-index: -1;
+  position: fixed;
 }
 
 .bg2 {
@@ -93,6 +88,8 @@ $primary: #3f51b5;
 }
 
 .content {
+  position: relative;
+  z-index: 1;
   background-color: rgba(255, 255, 255, .8);
   border-radius: .25em;
   box-shadow: 0 0 .25em rgb(73, 71, 71);
@@ -130,11 +127,11 @@ $primary: #3f51b5;
     font-size: 1.2rem !important;
   }
   .icon {
-    height: 50px !important;
+    height: 50px;
+    width: 50px;
   }
   .list {
     padding: 0 0 0 5px !important;
-
     li {
       font-size: 16px !important;
     }
@@ -174,32 +171,26 @@ $primary: #3f51b5;
     font-family: $font;
     display: flex;
     height: 75%;
-
     .team-content {
       display: flex;
       flex-direction: column;
-
       &__title {
         color: $primary;
       }
-
       .mat-card-content {
         display: flex;
         flex-wrap: wrap;
         height: 100%;
       }
-
       .people {
         margin-top: 10px;
         width: 33%;
         display: flex;
         align-items: center;
-
         .people-icon {
           height: 100px;
           width: auto;
         }
-
         .profile {
           display: flex;
           flex-direction: column;
@@ -208,7 +199,6 @@ $primary: #3f51b5;
           font-weight: bold;
           color: $primary;
         }
-
         .description {
           display: flex;
           flex-direction: column;
@@ -220,7 +210,6 @@ $primary: #3f51b5;
         }
       }
     }
-
     .project-description {
       font-size: 18px;
       color: $primary;
