@@ -5,25 +5,35 @@
         <mat-icon>menu</mat-icon>
       </button>
       <span class="logo">App Tracker</span>
-      <div *ngIf="(isAuth | async) && (username | async) as username">
+      <ng-container *ngIf="(isAuth | async) && (username | async) as username">
         <button mat-raised-button (click)="createBoard()">
           {{ 'HEADER.BUTTONS.CREATE' | translate }}
         </button>
-        <button mat-raised-button (click)="logout()">
-          {{ 'HEADER.BUTTONS.LOGOUT' | translate }}
+        <button mat-icon-button [matMenuTriggerFor]="userMenu">
+          <mat-icon>account_circle</mat-icon>
         </button>
-        <button routerLink="/user/update" mat-raised-button>
-          {{ 'HEADER.BUTTONS.EDIT' | translate }}
-        </button>
-        <button mat-raised-button (click)="deleteUser(username)">delete profile</button>
-      </div>
-      <div *ngIf="(isAuth | async) === false">
+        <mat-menu #userMenu="matMenu">
+          <button mat-menu-item routerLink="/user/update">
+            <mat-icon>edit</mat-icon>
+            <span>{{ 'HEADER.BUTTONS.EDIT' | translate }}</span>
+          </button>
+          <button mat-menu-item (click)="deleteUser(username)">
+            <mat-icon>delete_forever</mat-icon>
+            <span>Delete profile</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>{{ 'HEADER.BUTTONS.LOGOUT' | translate }}</span>
+          </button>
+        </mat-menu>
+      </ng-container>
+      <ng-container *ngIf="(isAuth | async) === false">
         <button routerLink="/auth/sign-in" mat-raised-button>Log In</button>
         <button routerLink="/auth/sign-up" mat-raised-button>Sign Up</button>
-      </div>
-      <mat-slide-toggle [(ngModel)]="isLangToggle" (change)="handleChange()">{{
-        getLang()
-      }}</mat-slide-toggle>
+      </ng-container>
+      <mat-slide-toggle [(ngModel)]="isLangToggle" (change)="handleChange()">
+        {{ getLang() }}
+      </mat-slide-toggle>
     </div>
   </mat-toolbar>
 </header>
