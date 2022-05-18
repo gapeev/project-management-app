@@ -1,6 +1,6 @@
 <form class="search-form" #ngForm="ngForm" [formGroup]="searchForm">
   <mat-form-field appearance="fill">
-    <mat-label>Column</mat-label>
+    <mat-label>{{ 'SEARCH-TASKS-PAGE.LABELS.COLUMN' | translate }}</mat-label>
     <mat-select formControlName="type">
       <mat-option value="title">{{ 'SEARCH-TASKS-PAGE.TITLE' | translate }}</mat-option>
       <mat-option value="description">{{ 'SEARCH-TASKS-PAGE.DESCRIPTION' | translate }}</mat-option>
@@ -9,7 +9,7 @@
   </mat-form-field>
   <mat-form-field class="search" appearance="fill">
     <mat-icon matPrefix>search</mat-icon>
-    <mat-label>Search</mat-label>
+    <mat-label>{{ 'SEARCH-TASKS-PAGE.LABELS.SEARCH' | translate }}</mat-label>
     <input type="search" matInput formControlName="query" />
   </mat-form-field>
 </form>

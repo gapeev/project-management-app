@@ -3,8 +3,11 @@
   {{ 'DELETE-DIALOG.DELETE' | translate: param }}
 </h1>
 <div mat-dialog-content>
-  <p>
+  <p *ngIf="param.type !== 'user' && param.type !== 'пользователя'">
     {{ 'DELETE-DIALOG.TEXT' | translate: param }}
+  </p>
+  <p *ngIf="param.type === 'user' || param.type === 'пользователя'">
+    {{ 'DELETE-DIALOG.USER-TEXT' | translate: param }}
   </p>
 </div>
 <div class="actions" mat-dialog-actions>

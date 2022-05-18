@@ -19,7 +19,7 @@
           </button>
           <button mat-menu-item (click)="deleteUser(username)">
             <mat-icon>delete_forever</mat-icon>
-            <span>Delete profile</span>
+            <span>{{ 'HEADER.BUTTONS.DELETE' | translate }}</span>
           </button>
           <button mat-menu-item (click)="logout()">
             <mat-icon>logout</mat-icon>
@@ -28,8 +28,12 @@
         </mat-menu>
       </ng-container>
       <ng-container *ngIf="(isAuth | async) === false">
-        <button routerLink="/auth/sign-in" mat-raised-button>Log In</button>
-        <button routerLink="/auth/sign-up" mat-raised-button>Sign Up</button>
+        <button routerLink="/auth/sign-in" mat-raised-button>
+          {{ 'HEADER.BUTTONS.LOG-IN' | translate }}
+        </button>
+        <button routerLink="/auth/sign-up" mat-raised-button>
+          {{ 'HEADER.BUTTONS.SIGN-UP' | translate }}
+        </button>
       </ng-container>
       <mat-slide-toggle [(ngModel)]="isLangToggle" (change)="handleChange()">
         {{ getLang() }}

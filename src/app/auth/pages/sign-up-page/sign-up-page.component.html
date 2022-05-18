@@ -33,14 +33,14 @@
         </mat-form-field>
       </mat-card-content>
       <mat-card-actions class="form-actions" align="end">
-        <a mat-button routerLink="/auth/sign-in">Login</a>
+        <a mat-button routerLink="/auth/sign-in">{{ 'SIGN-UP-PAGE.BUTTONS.LOGIN' | translate }}</a>
         <button
           mat-stroked-button
           type="submit"
           color="primary"
           [disabled]="ngForm.invalid || isSubmitting"
         >
-          {{ 'SIGN-UP-PAGE.BUTTON' | translate }}
+          {{ 'SIGN-UP-PAGE.BUTTONS.SIGN-UP' | translate }}
         </button>
       </mat-card-actions>
     </mat-card>
