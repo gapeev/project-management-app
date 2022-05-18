@@ -8,7 +8,7 @@ $primary: #3f51b5;
   &__container {
     align-items: center;
     margin: 4rem auto 0;
-    max-width: 1440px;
+    max-width: 1200px;
     font-family: $font;
     height: 100%;
     display: flex;
@@ -167,10 +167,10 @@ $primary: #3f51b5;
   height: 88vh;
   &__container {
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: 1200px;
     font-family: $font;
     display: flex;
-    height: 75%;
+    height: 90%;
     .team-content {
       display: flex;
       flex-direction: column;
