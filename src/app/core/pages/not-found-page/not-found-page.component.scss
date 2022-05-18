@@ -2,7 +2,7 @@ $font: Roboto, 'Helvetica Neue', sans-serif;
 $primary: #3f51b5;
 
 .error-page {
-  height: 94vh;
+  height: calc(100vh - 4rem);
   width: inherit;
 
   &__container {
