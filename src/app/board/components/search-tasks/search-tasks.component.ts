@@ -42,6 +42,10 @@ export class SearchTasksComponent implements OnInit, OnDestroy, AfterViewInit, A
 
   public dataSource!: MatTableDataSource<TaskSearch>;
 
+  public yes = 'Yes';
+
+  public no = 'No';
+
   @ViewChild(MatPaginator)
   public paginator!: MatPaginator;
 
@@ -106,6 +110,10 @@ export class SearchTasksComponent implements OnInit, OnDestroy, AfterViewInit, A
   constructor(
     private store: Store,
     private formBuilder: FormBuilder,
-    private cdr: ChangeDetectorRef
-  ) {}
+    private cdr: ChangeDetectorRef,
+    private translate: TranslateService
+  ) {
+    this.translate.stream('SEARCH-TASKS-PAGE.YES').subscribe((res) => (this.yes = res));
+    this.translate.stream('SEARCH-TASKS-PAGE.NO').subscribe((res) => (this.no = res));
+  }
 }
