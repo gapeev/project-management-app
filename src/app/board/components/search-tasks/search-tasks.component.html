@@ -33,7 +33,7 @@
 
       <ng-container matColumnDef="done">
         <th mat-header-cell *matHeaderCellDef>{{ 'SEARCH-TASKS-PAGE.DONE' | translate }}</th>
-        <td mat-cell *matCellDef="let element">{{ element.done ? 'Yes' : 'No' }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.done ? yes : no }}</td>
       </ng-container>
 
       <ng-container matColumnDef="user">

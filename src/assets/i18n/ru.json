@@ -186,7 +186,9 @@
       "LAST-PAGE": "Последняя страница",
       "LABEL": "{{startIndex}} - {{endIndex}} из {{length}}",
       "LABEL-0": "0 из {{length}}"
-    }
+    },
+    "YES": "Да",
+    "NO": "Нет"
   },
   "DELETE-DIALOG": {
     "TITLE": "внимание",

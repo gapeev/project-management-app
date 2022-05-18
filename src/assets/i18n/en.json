@@ -186,7 +186,9 @@
       "LAST-PAGE": "Last page",
       "LABEL": "{{startIndex}} - {{endIndex}} of {{length}}",
       "LABEL-0": "0 of {{length}}"
-    }
+    },
+    "YES": "Yes",
+    "NO": "No"
   },
   "DELETE-DIALOG": {
     "TITLE": "Warning",
