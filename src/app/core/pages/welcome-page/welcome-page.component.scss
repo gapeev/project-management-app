@@ -5,21 +5,24 @@ $primary: #3f51b5;
   height: 100vh;
   width: inherit;
   overflow: hidden;
+
   &__container {
     align-items: center;
     margin: 4rem auto 0;
-    max-width: 1440px;
+    max-width: 1200px;
     font-family: $font;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
     .greeting {
       height: 22vh;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       background-color: rgba(255, 255, 255, 0);
+
       p {
         margin: 0;
         font-family: $font;
@@ -29,6 +32,7 @@ $primary: #3f51b5;
         display: table;
         white-space: normal;
       }
+
       .registration-button {
         background: $primary;
         color: white;
@@ -38,13 +42,16 @@ $primary: #3f51b5;
         width: 250px;
       }
     }
+
     .functions {
       display: flex;
+
       .functions-management,
       .functions-settings {
         display: flex;
         width: 50%;
         align-items: center;
+
         ul {
           text-align: left;
           padding: 0 0 0 10px;
@@ -59,6 +66,7 @@ $primary: #3f51b5;
         }
       }
     }
+
     .about {
       width: 200px;
       font-size: 18px;
@@ -66,6 +74,7 @@ $primary: #3f51b5;
     }
   }
 }
+
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
 .bg {
@@ -132,6 +141,7 @@ $primary: #3f51b5;
   }
   .list {
     padding: 0 0 0 5px !important;
+
     li {
       font-size: 16px !important;
     }
@@ -165,32 +175,39 @@ $primary: #3f51b5;
 
 .team-page {
   height: 88vh;
+
   &__container {
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: 1200px;
     font-family: $font;
     display: flex;
-    height: 75%;
+    height: 90%;
+
     .team-content {
       display: flex;
       flex-direction: column;
+
       &__title {
         color: $primary;
       }
+
       .mat-card-content {
         display: flex;
         flex-wrap: wrap;
         height: 100%;
       }
+
       .people {
         margin-top: 10px;
         width: 33%;
         display: flex;
         align-items: center;
+
         .people-icon {
           height: 100px;
           width: auto;
         }
+
         .profile {
           display: flex;
           flex-direction: column;
@@ -199,6 +216,7 @@ $primary: #3f51b5;
           font-weight: bold;
           color: $primary;
         }
+
         .description {
           display: flex;
           flex-direction: column;
@@ -210,6 +228,7 @@ $primary: #3f51b5;
         }
       }
     }
+
     .project-description {
       font-size: 18px;
       color: $primary;

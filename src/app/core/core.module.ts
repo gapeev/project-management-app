@@ -19,6 +19,7 @@ import { environment } from '../../environments/environment';
 import UserEffects from '@store/effects/user.effects';
 import BoardEffects from '@store/effects/board.effects';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     HeaderComponent,
     LoadingBarComponent,
     SidenavComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     CommonModule,
@@ -46,6 +48,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     HeaderComponent,
     LoadingBarComponent,
     SidenavComponent,
+    NotFoundPageComponent,
   ],
   providers: [HttpInterceptors],
 })
