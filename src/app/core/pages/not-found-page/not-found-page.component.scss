@@ -1,0 +1,24 @@
+$font: Roboto, 'Helvetica Neue', sans-serif;
+$primary: #3f51b5;
+
+.error-page {
+  height: 100vh;
+  width: inherit;
+  &__container {
+    margin: 0 auto;
+    max-width: 1440px;
+    font-family: $font;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .error-description {
+      width: 50%;
+      h1 {
+        font-family: $font;
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+

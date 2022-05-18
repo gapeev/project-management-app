@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@core/guards/auth.guard';
 import { SignGuard } from '@core/guards/sign.guard';
 import { WelcomePageComponent } from '@core/pages/welcome-page/welcome-page.component';
+import {NotFoundPageComponent} from "@core/pages/not-found-page/not-found-page.component";
 
 const routes: Routes = [
   {
@@ -29,6 +30,14 @@ const routes: Routes = [
     loadChildren: () => import('./board/board.module').then((m) => m.BoardModule),
     canActivate: [AuthGuard],
     runGuardsAndResolvers: 'always',
+  },
+  {
+    path: '404',
+    component: NotFoundPageComponent
+  },
+  {
+    path: '**',
+    redirectTo: '404'
   },
 ];
 
