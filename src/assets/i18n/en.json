@@ -167,5 +167,13 @@
     "BOARD": "board",
     "COLUMN": "column",
     "TASK": "task"
-  }
+  },
+  "BACKEND": {
+    "CLOSE": "Close"
+  },
+  "User login already exists!": "User login already exists!",
+  "User was not founded!": "User was not founded!",
+  "Internal server error": "An unexpected error occurred. Please try again later.",
+  "Something went wrong": "An unexpected error occurred. Please try again later.",
+  "Validation failed (uuid is expected)": "The board doesn't exist."
 }

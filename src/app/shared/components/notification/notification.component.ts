@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Subscription, tap } from 'rxjs';
+import { Subscription, take, tap } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar, MatSnackBarRef, TextOnlySnackBar } from '@angular/material/snack-bar';
 import { clearErrorMessage } from '@store/actions/error.actions';
 import { selectError } from '@store/selectors/error.selectors';
@@ -21,19 +22,25 @@ export class NotificationComponent implements OnInit, OnDestroy {
           if (!errorMessage) {
             return;
           }
-          const snackBarRef: MatSnackBarRef<TextOnlySnackBar> = this.matSnackBar.open(
-            errorMessage,
-            'Close'
-          );
-          snackBarRef
-            .onAction()
-            .pipe(
-              tap(() => {
-                this.confirm.emit();
-                this.store.dispatch(clearErrorMessage());
-              })
-            )
-            .subscribe();
+          this.translate
+            .get([errorMessage, 'BACKEND.CLOSE'])
+            .pipe(take(1))
+            .subscribe((data) => {
+              const [errorMessage, close] = Object.values(data);
+              const snackBarRef: MatSnackBarRef<TextOnlySnackBar> = this.matSnackBar.open(
+                errorMessage,
+                close
+              );
+              snackBarRef
+                .onAction()
+                .pipe(
+                  tap(() => {
+                    this.confirm.emit();
+                    this.store.dispatch(clearErrorMessage());
+                  })
+                )
+                .subscribe();
+            });
         })
       )
       .subscribe();
@@ -45,5 +52,9 @@ export class NotificationComponent implements OnInit, OnDestroy {
 
   private subscription$!: Subscription;
 
-  constructor(private matSnackBar: MatSnackBar, private store: Store) {}
+  constructor(
+    private matSnackBar: MatSnackBar,
+    private store: Store,
+    private readonly translate: TranslateService
+  ) {}
 }
