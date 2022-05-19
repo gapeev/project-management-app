@@ -33,6 +33,7 @@ $primary: #3f51b5;
         display: table;
         white-space: normal;
       }
+
       .registration-button {
         background: $primary;
         color: white;
@@ -42,8 +43,10 @@ $primary: #3f51b5;
         width: 250px;
       }
     }
+
     .functions {
       display: flex;
+
       .functions-management,
       .functions-settings {
         display: flex;
@@ -72,6 +75,7 @@ $primary: #3f51b5;
     }
   }
 }
+
 .bg {
   animation: slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, #27b6a7 50%, $primary 50%);
