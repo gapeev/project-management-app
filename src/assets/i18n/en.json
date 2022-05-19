@@ -1,9 +1,14 @@
 {
   "HEADER": {
     "BUTTONS": {
-      "CREATE": "create new board",
-      "LOGOUT": "logout",
-      "EDIT": "edit profile"
+      "CREATE": "Create board",
+      "LOGOUT": "Logout",
+      "EDIT": "Edit profile",
+      "DELETE": "Delete profile",
+      "LOG-IN": "Log In",
+      "SIGN-UP": "Sign Up",
+      "WELCOME": "Welcome",
+      "BOARDS": "Boards"
     }
   },
   "LOGIN-PAGE": {
@@ -17,7 +22,10 @@
       "PASSWORD": "Password is "
     },
     "REQUIRED": "required",
-    "BUTTON": "Login"
+    "BUTTONS": {
+      "REGISTRATION": "Registration",
+      "LOGIN": "Login"
+    }
   },
   "SIGN-UP-PAGE": {
     "TITLE": "Sign Up",
@@ -35,14 +43,32 @@
       "NAME": "required",
       "OTHER": "required"
     },
-    "BUTTON": "Sign Up"
+    "BUTTONS": {
+      "SIGN-UP": "Sign Up",
+      "LOGIN": "Login"
+    }
   },
   "WELCOME-PAGE": {
-    "LOGOUT": "Logout",
-    "DELETE": "Delete"
+    "GREETING-TEXT": "Plan projects and manage tasks!",
+    "MANAGEMENT": {
+      "1": "Organize the work of your team in a common space.",
+      "2": "Add columns, tasks, and whiteboards.",
+      "3": "Set and control tasks of any complexity."
+    },
+    "SETTINGS": {
+      "1": "Arrange the work on the project according to any method convenient for you.",
+      "2": "Manage interdependent, overlapping and unexpected tasks and create realistic plans."
+    },
+    "BUTTON": "About our team",
+    "SUBTITLE": "About our team",
+    "NAMES": {
+      "DIMA": "Dima",
+      "NASTYA": "Nastya",
+      "LERA": "Lera"
+    }
   },
   "UPDATE-USER": {
-    "TITLE": "Update",
+    "TITLE": "Edit profile",
     "INPUTS": {
       "NAME": "Name",
       "LOGIN": "Login",
@@ -126,6 +152,7 @@
     }
   },
   "BOARD-PAGE": {
+    "LINK": "Boards",
     "BUTTONS": {
       "CREATE": {
         "COLUMN": "Create column",
@@ -137,7 +164,8 @@
   "BOARDS-PAGE": {
     "BUTTONS": {
       "CREATE": "Create board",
-      "DELETE": "Delete"
+      "DELETE": "Delete",
+      "OPEN": "Open"
     }
   },
   "SEARCH-TASKS-PAGE": {
@@ -146,6 +174,10 @@
     "USER": "User",
     "NUMB": "No.",
     "DONE": "Done",
+    "LABELS": {
+      "COLUMN": "Column",
+      "SEARCH": "Search"
+    },
     "PAGINATOR": {
       "PER-PAGE": "Items per page",
       "NEXT-PAGE": "Next page",
@@ -154,19 +186,23 @@
       "LAST-PAGE": "Last page",
       "LABEL": "{{startIndex}} - {{endIndex}} of {{length}}",
       "LABEL-0": "0 of {{length}}"
-    }
+    },
+    "YES": "Yes",
+    "NO": "No"
   },
   "DELETE-DIALOG": {
-    "TITLE": "warning",
+    "TITLE": "Warning",
     "DELETE": "Delete {{ target }}?",
     "TEXT": "You're about to permanently delete this {{ type }} and all of its data. If you're not sure, you can cancel this action.",
+    "USER-TEXT": "You're about to permanently delete this {{ type }} and all of its data. If you're not sure, you can cancel this action.",
     "BUTTONS": {
       "DELETE": "Delete",
       "CANCEL": "Cancel"
     },
     "BOARD": "board",
     "COLUMN": "column",
-    "TASK": "task"
+    "TASK": "task",
+    "USER": "user"
   },
   "BACKEND": {
     "CLOSE": "Close"
@@ -175,5 +211,11 @@
   "User was not founded!": "User was not founded!",
   "Internal server error": "An unexpected error occurred. Please try again later.",
   "Something went wrong": "An unexpected error occurred. Please try again later.",
-  "Validation failed (uuid is expected)": "The board doesn't exist."
+  "Validation failed (uuid is expected)": "The board doesn't exist.",
+  "ERROR-PAGE": {
+    "TITLE": "Page not found",
+    "TEXT": "Something went wrong. <br> You can go back to the home page",
+    "BUTTON": "Go home",
+    "ERROR": "Error"
+  }
 }

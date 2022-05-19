@@ -26,14 +26,16 @@
         </mat-form-field>
       </mat-card-content>
       <mat-card-actions class="form-actions" align="end">
-        <a mat-button routerLink="/auth/sign-up">Registration</a>
+        <a mat-button routerLink="/auth/sign-up">{{
+          'LOGIN-PAGE.BUTTONS.REGISTRATION' | translate
+        }}</a>
         <button
           mat-stroked-button
           type="submit"
           color="primary"
           [disabled]="ngForm.invalid || isSubmitting"
         >
-          {{ 'LOGIN-PAGE.BUTTON' | translate }}
+          {{ 'LOGIN-PAGE.BUTTONS.LOGIN' | translate }}
         </button>
       </mat-card-actions>
     </mat-card>
