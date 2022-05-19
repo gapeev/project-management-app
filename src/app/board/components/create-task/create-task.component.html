@@ -1,0 +1,49 @@
+<div *ngIf="board$ | async as board">
+  <h1 class="title" mat-dialog-title>
+    <mat-icon class="icon" aria-hidden="false" aria-label="add circle icon">add_circle</mat-icon>
+    {{ 'CREATE-TASK.TITLE' | translate }}
+  </h1>
+  <form class="form-content" #ngForm="ngForm" [formGroup]="createTaskForm">
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'CREATE-TASK.FIELDS-TITLES.TITLE' | translate }}</mat-label>
+      <input type="text" matInput formControlName="title" />
+      <mat-error *ngIf="title?.hasError('required')">
+        {{ 'CREATE-TASK.ERRORS-TEXT.TITLE' | translate
+        }}<strong>{{ 'CREATE-TASK.REQUIRED' | translate }}</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'CREATE-TASK.FIELDS-TITLES.DESCRIPTION' | translate }}</mat-label>
+      <input type="text" matInput formControlName="description" />
+      <mat-error *ngIf="description?.hasError('required')">
+        {{ 'CREATE-TASK.ERRORS-TEXT.DESCRIPTION' | translate
+        }}<strong>{{ 'CREATE-TASK.REQUIRED' | translate }}</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'CREATE-TASK.FIELDS-TITLES.USER' | translate }}</mat-label>
+      <mat-select formControlName="userId">
+        <mat-option *ngFor="let userInfo of users$ | async" [value]="userInfo.id">
+          {{ userInfo.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox formControlName="done">{{ 'CREATE-TASK.DONE' | translate }}</mat-checkbox>
+  </form>
+  <div class="actions" mat-dialog-actions>
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="onCreateClick(board)"
+      [disabled]="ngForm.invalid"
+    >
+      {{ 'CREATE-TASK.BUTTONS.CREATE' | translate }}
+    </button>
+    <button mat-button (click)="onCancelClick()">
+      {{ 'CREATE-TASK.BUTTONS.CANCEL' | translate }}
+    </button>
+  </div>
+</div>

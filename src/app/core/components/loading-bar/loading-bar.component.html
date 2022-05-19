@@ -1,0 +1,5 @@
+<mat-progress-bar
+  class="loading-bar"
+  *ngIf="(isUserPending | async) || (isBoardPending | async)"
+  mode="indeterminate"
+></mat-progress-bar>

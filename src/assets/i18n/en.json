@@ -1,0 +1,221 @@
+{
+  "HEADER": {
+    "BUTTONS": {
+      "CREATE": "Create board",
+      "LOGOUT": "Logout",
+      "EDIT": "Edit profile",
+      "DELETE": "Delete profile",
+      "LOG-IN": "Log In",
+      "SIGN-UP": "Sign Up",
+      "WELCOME": "Welcome",
+      "BOARDS": "Boards"
+    }
+  },
+  "LOGIN-PAGE": {
+    "TITLE": "Login",
+    "INPUTS": {
+      "LOGIN": "Login",
+      "PASSWORD": "Password"
+    },
+    "ERROR-TEXT": {
+      "LOGIN": "Login is ",
+      "PASSWORD": "Password is "
+    },
+    "REQUIRED": "required",
+    "BUTTONS": {
+      "REGISTRATION": "Registration",
+      "LOGIN": "Login"
+    }
+  },
+  "SIGN-UP-PAGE": {
+    "TITLE": "Sign Up",
+    "INPUTS": {
+      "NAME": "Name",
+      "LOGIN": "Login",
+      "PASSWORD": "Password"
+    },
+    "ERROR-TEXT": {
+      "NAME": "Name is ",
+      "LOGIN": "Login is ",
+      "PASSWORD": "Password is "
+    },
+    "REQUIRED": {
+      "NAME": "required",
+      "OTHER": "required"
+    },
+    "BUTTONS": {
+      "SIGN-UP": "Sign Up",
+      "LOGIN": "Login"
+    }
+  },
+  "WELCOME-PAGE": {
+    "GREETING-TEXT": "Plan projects and manage tasks!",
+    "MANAGEMENT": {
+      "1": "Organize the work of your team in a common space.",
+      "2": "Add columns, tasks, and whiteboards.",
+      "3": "Set and control tasks of any complexity."
+    },
+    "SETTINGS": {
+      "1": "Arrange the work on the project according to any method convenient for you.",
+      "2": "Manage interdependent, overlapping and unexpected tasks and create realistic plans."
+    },
+    "BUTTON": "About our team",
+    "SUBTITLE": "About our team",
+    "NAMES": {
+      "DIMA": "Dima",
+      "NASTYA": "Nastya",
+      "LERA": "Lera"
+    }
+  },
+  "UPDATE-USER": {
+    "TITLE": "Edit profile",
+    "INPUTS": {
+      "NAME": "Name",
+      "LOGIN": "Login",
+      "PASSWORD": "Password"
+    },
+    "ERROR-TEXT": {
+      "NAME": "Name is ",
+      "LOGIN": "Login is ",
+      "PASSWORD": "Password is "
+    },
+    "REQUIRED": {
+      "NAME": "required",
+      "OTHER": "required"
+    },
+    "BUTTON": "Update"
+  },
+  "CREATE-BOARD": {
+    "TITLE": "Create Board",
+    "FIELDS-TITLES": {
+      "TITLE": "Title",
+      "DESCRIPTION": "Description"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Title is ",
+      "DESCRIPTION": "Description is "
+    },
+    "REQUIRED": "required",
+    "BUTTONS": {
+      "CREATE": "Create",
+      "CANCEL": "Cancel"
+    }
+  },
+  "CREATE-COLUMN": {
+    "TITLE": "Create Column",
+    "FIELDS-TITLES": {
+      "TITLE": "Title"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Title is "
+    },
+    "REQUIRED": "required",
+    "BUTTONS": {
+      "CREATE": "Create",
+      "CANCEL": "Cancel"
+    }
+  },
+  "CREATE-TASK": {
+    "TITLE": "Create Task",
+    "FIELDS-TITLES": {
+      "TITLE": "Title",
+      "DESCRIPTION": "Description",
+      "USER": "User"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Title is ",
+      "DESCRIPTION": "Description is "
+    },
+    "REQUIRED": "required",
+    "DONE": "Done",
+    "BUTTONS": {
+      "CREATE": "Create",
+      "CANCEL": "Cancel"
+    }
+  },
+  "UPDATE-TASK": {
+    "TITLE": "Task",
+    "FIELDS-TITLES": {
+      "TITLE": "Title",
+      "DESCRIPTION": "Description",
+      "USER": "User"
+    },
+    "ERRORS-TEXT": {
+      "TITLE": "Title is ",
+      "DESCRIPTION": "Description is "
+    },
+    "REQUIRED": "required",
+    "DONE": "Done",
+    "BUTTONS": {
+      "UPDATE": "Update",
+      "CANCEL": "Cancel"
+    }
+  },
+  "BOARD-PAGE": {
+    "LINK": "Boards",
+    "BUTTONS": {
+      "CREATE": {
+        "COLUMN": "Create column",
+        "TASK": "Create task"
+      },
+      "DELETE": "Delete"
+    }
+  },
+  "BOARDS-PAGE": {
+    "BUTTONS": {
+      "CREATE": "Create board",
+      "DELETE": "Delete",
+      "OPEN": "Open"
+    }
+  },
+  "SEARCH-TASKS-PAGE": {
+    "TITLE": "Title",
+    "DESCRIPTION": "Description",
+    "USER": "User",
+    "NUMB": "No.",
+    "DONE": "Done",
+    "LABELS": {
+      "COLUMN": "Column",
+      "SEARCH": "Search"
+    },
+    "PAGINATOR": {
+      "PER-PAGE": "Items per page",
+      "NEXT-PAGE": "Next page",
+      "PREV-PAGE": "Previous page",
+      "FIRST-PAGE": "First page",
+      "LAST-PAGE": "Last page",
+      "LABEL": "{{startIndex}} - {{endIndex}} of {{length}}",
+      "LABEL-0": "0 of {{length}}"
+    },
+    "YES": "Yes",
+    "NO": "No"
+  },
+  "DELETE-DIALOG": {
+    "TITLE": "Warning",
+    "DELETE": "Delete {{ target }}?",
+    "TEXT": "You're about to permanently delete this {{ type }} and all of its data. If you're not sure, you can cancel this action.",
+    "USER-TEXT": "You're about to permanently delete this {{ type }} and all of its data. If you're not sure, you can cancel this action.",
+    "BUTTONS": {
+      "DELETE": "Delete",
+      "CANCEL": "Cancel"
+    },
+    "BOARD": "board",
+    "COLUMN": "column",
+    "TASK": "task",
+    "USER": "user"
+  },
+  "BACKEND": {
+    "CLOSE": "Close"
+  },
+  "User login already exists!": "User login already exists!",
+  "User was not founded!": "User was not founded!",
+  "Internal server error": "An unexpected error occurred. Please try again later.",
+  "Something went wrong": "An unexpected error occurred. Please try again later.",
+  "Validation failed (uuid is expected)": "The board doesn't exist.",
+  "ERROR-PAGE": {
+    "TITLE": "Page not found",
+    "TEXT": "Something went wrong. <br> You can go back to the home page",
+    "BUTTON": "Go home",
+    "ERROR": "Error"
+  }
+}

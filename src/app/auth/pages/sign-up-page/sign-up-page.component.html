@@ -1,0 +1,48 @@
+<app-notification (confirm)="onErrorConfirm()"></app-notification>
+
+<div class="page-container form-container">
+  <form class="form-card" #ngForm="ngForm" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-title>
+        <h2>{{ 'SIGN-UP-PAGE.TITLE' | translate }}</h2>
+      </mat-card-title>
+      <mat-card-content class="form-content">
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'SIGN-UP-PAGE.INPUTS.NAME' | translate }}</mat-label>
+          <input type="text" matInput formControlName="name" />
+          <mat-error *ngIf="name?.hasError('required')"
+            >{{ 'SIGN-UP-PAGE.ERROR-TEXT.NAME' | translate
+            }}<strong>{{ 'SIGN-UP-PAGE.REQUIRED.NAME' | translate }}</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'SIGN-UP-PAGE.INPUTS.LOGIN' | translate }}</mat-label>
+          <input type="text" matInput formControlName="login" />
+          <mat-error *ngIf="login?.hasError('required')"
+            >{{ 'SIGN-UP-PAGE.ERROR-TEXT.LOGIN' | translate
+            }}<strong>{{ 'SIGN-UP-PAGE.REQUIRED.OTHER' | translate }}</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'SIGN-UP-PAGE.INPUTS.PASSWORD' | translate }}</mat-label>
+          <input type="password" matInput formControlName="password" />
+          <mat-error *ngIf="password?.hasError('required')"
+            >{{ 'SIGN-UP-PAGE.ERROR-TEXT.PASSWORD' | translate
+            }}<strong>{{ 'SIGN-UP-PAGE.REQUIRED.OTHER' | translate }}</strong>
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="form-actions" align="end">
+        <a mat-button routerLink="/auth/sign-in">{{ 'SIGN-UP-PAGE.BUTTONS.LOGIN' | translate }}</a>
+        <button
+          mat-stroked-button
+          type="submit"
+          color="primary"
+          [disabled]="ngForm.invalid || isSubmitting"
+        >
+          {{ 'SIGN-UP-PAGE.BUTTONS.SIGN-UP' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

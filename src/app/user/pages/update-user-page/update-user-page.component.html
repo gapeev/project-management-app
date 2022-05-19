@@ -1,0 +1,49 @@
+<app-notification (confirm)="onErrorConfirm()"></app-notification>
+
+<div class="page-container form-container">
+  <form class="form-card" #ngForm="ngForm" [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-title>
+        <h2>{{ 'UPDATE-USER.TITLE' | translate }}</h2>
+      </mat-card-title>
+
+      <mat-card-content class="form-content">
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'UPDATE-USER.INPUTS.NAME' | translate }}</mat-label>
+          <input type="text" matInput formControlName="name" />
+          <mat-error *ngIf="name?.hasError('required')"
+            >{{ 'UPDATE-USER.ERROR-TEXT.NAME' | translate
+            }}<strong>{{ 'UPDATE-USER.REQUIRED.NAME' | translate }}</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'UPDATE-USER.INPUTS.LOGIN' | translate }}</mat-label>
+          <input type="text" matInput formControlName="login" />
+          <mat-error *ngIf="login?.hasError('required')"
+            >{{ 'UPDATE-USER.ERROR-TEXT.LOGIN' | translate
+            }}<strong>{{ 'UPDATE-USER.REQUIRED.OTHER' | translate }}</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'UPDATE-USER.INPUTS.PASSWORD' | translate }}</mat-label>
+          <input type="password" matInput formControlName="password" />
+          <mat-error *ngIf="password?.hasError('required')">
+            {{ 'UPDATE-USER.ERROR-TEXT.PASSWORD' | translate }}
+            <strong>{{ 'UPDATE-USER.REQUIRED.OTHER' | translate }}</strong>
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-actions class="form-actions" align="end">
+        <button
+          mat-stroked-button
+          type="submit"
+          color="primary"
+          [disabled]="ngForm.invalid || isSubmitting || updateUserForm.pristine"
+        >
+          {{ 'UPDATE-USER.BUTTON' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
