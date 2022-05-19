@@ -1,0 +1,20 @@
+<h1 class="title" mat-dialog-title>
+  <mat-icon class="icon" aria-hidden="false" aria-label="warning icon">warning</mat-icon>
+  {{ 'DELETE-DIALOG.DELETE' | translate: param }}
+</h1>
+<div mat-dialog-content>
+  <p *ngIf="param.type !== 'user' && param.type !== 'пользователя'">
+    {{ 'DELETE-DIALOG.TEXT' | translate: param }}
+  </p>
+  <p *ngIf="param.type === 'user' || param.type === 'пользователя'">
+    {{ 'DELETE-DIALOG.USER-TEXT' | translate: param }}
+  </p>
+</div>
+<div class="actions" mat-dialog-actions>
+  <button mat-flat-button color="warn" (click)="onDeleteClick()">
+    {{ 'DELETE-DIALOG.BUTTONS.DELETE' | translate }}
+  </button>
+  <button mat-button (click)="onCancelClick()" cdkFocusInitial>
+    {{ 'DELETE-DIALOG.BUTTONS.CANCEL' | translate: param }}
+  </button>
+</div>

@@ -1,0 +1,48 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '@core/guards/auth.guard';
+import { SignGuard } from '@core/guards/sign.guard';
+import { WelcomePageComponent } from '@core/pages/welcome-page/welcome-page.component';
+import { NotFoundPageComponent } from '@core/pages/not-found-page/not-found-page.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/boards',
+    pathMatch: 'full',
+  },
+  {
+    path: 'welcome',
+    component: WelcomePageComponent,
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    canActivate: [SignGuard],
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'boards',
+    loadChildren: () => import('./board/board.module').then((m) => m.BoardModule),
+    canActivate: [AuthGuard],
+    runGuardsAndResolvers: 'always',
+  },
+  {
+    path: '404',
+    component: NotFoundPageComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '404',
+  },
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}

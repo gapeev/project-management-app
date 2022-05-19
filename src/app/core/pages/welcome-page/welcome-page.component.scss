@@ -1,0 +1,255 @@
+$font: Roboto, 'Helvetica Neue', sans-serif;
+$primary: #3f51b5;
+
+.welcome-page {
+  height: 100vh;
+  width: inherit;
+  overflow: hidden;
+
+  &__container {
+    align-items: center;
+    margin: 4rem auto 0;
+    max-width: 1200px;
+    font-family: $font;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .greeting {
+      height: 22vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: rgba(255, 255, 255, 0);
+
+      p {
+        margin: 0;
+        font-family: $font;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        color: $primary;
+        display: table;
+        white-space: normal;
+      }
+
+      .registration-button {
+        background: $primary;
+        color: white;
+        font-family: $font;
+        font-size: 18px;
+        height: 45px;
+        width: 250px;
+      }
+    }
+
+    .functions {
+      display: flex;
+
+      .functions-management,
+      .functions-settings {
+        display: flex;
+        width: 50%;
+        align-items: center;
+
+        ul {
+          text-align: left;
+          padding: 0 0 0 10px;
+
+          li {
+            font-family: $font;
+            list-style-type: none;
+            color: $primary;
+            font-size: 18px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+
+    .about {
+      width: 200px;
+      font-size: 18px;
+      font-family: $font;
+    }
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #27b6a7 50%, $primary 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  right: -50%;
+  top: 0;
+  position: fixed;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.25em rgb(73, 71, 71);
+  box-sizing: border-box;
+  padding: 10vmin;
+  text-align: center;
+  width: 75%;
+  margin: 50px auto 0;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+.icon {
+  height: 100px;
+  width: auto;
+}
+
+@media (max-width: 790px) {
+  .content {
+    width: 90%;
+  }
+  .title {
+    font-size: 2.5rem !important;
+  }
+  .greeting-text {
+    width: inherit;
+    display: flex;
+    font-size: 1.2rem !important;
+  }
+  .icon {
+    height: 50px;
+    width: 50px;
+  }
+  .list {
+    padding: 0 0 0 5px !important;
+
+    li {
+      font-size: 16px !important;
+    }
+  }
+  .functions {
+    flex-direction: column;
+  }
+  .functions-management,
+  .functions-settings {
+    width: 100% !important;
+  }
+}
+
+.greeting-line {
+  margin: 20px 0;
+  padding: 0;
+  height: 0;
+  border: none;
+  width: 100%;
+  border-top: 1px solid $primary;
+}
+
+.title {
+  color: $primary;
+  font-weight: bold;
+  font-size: 4rem;
+  letter-spacing: 3px;
+  line-height: 4rem;
+  font-family: monospace;
+}
+
+.team-page {
+  height: 88vh;
+
+  &__container {
+    margin: 0 auto;
+    max-width: 1200px;
+    font-family: $font;
+    display: flex;
+    height: 90%;
+
+    .team-content {
+      display: flex;
+      flex-direction: column;
+
+      &__title {
+        color: $primary;
+      }
+
+      .mat-card-content {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+      }
+
+      .people {
+        margin-top: 10px;
+        width: 33%;
+        display: flex;
+        align-items: center;
+
+        .people-icon {
+          height: 100px;
+          width: auto;
+        }
+
+        .profile {
+          display: flex;
+          flex-direction: column;
+          font-size: 22px;
+          font-family: $font;
+          font-weight: bold;
+          color: $primary;
+        }
+
+        .description {
+          display: flex;
+          flex-direction: column;
+          font-size: 16px;
+          font-family: $font;
+          text-align: left;
+          color: $primary;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .project-description {
+      font-size: 18px;
+      color: $primary;
+      font-family: $font;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .people {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 790px) {
+  .people {
+    width: 100% !important;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: $primary;
+}

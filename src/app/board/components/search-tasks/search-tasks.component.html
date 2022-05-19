@@ -1,0 +1,50 @@
+<form class="search-form" #ngForm="ngForm" [formGroup]="searchForm">
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'SEARCH-TASKS-PAGE.LABELS.COLUMN' | translate }}</mat-label>
+    <mat-select formControlName="type">
+      <mat-option value="title">{{ 'SEARCH-TASKS-PAGE.TITLE' | translate }}</mat-option>
+      <mat-option value="description">{{ 'SEARCH-TASKS-PAGE.DESCRIPTION' | translate }}</mat-option>
+      <mat-option value="user">{{ 'SEARCH-TASKS-PAGE.USER' | translate }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="search" appearance="fill">
+    <mat-icon matPrefix>search</mat-icon>
+    <mat-label>{{ 'SEARCH-TASKS-PAGE.LABELS.SEARCH' | translate }}</mat-label>
+    <input type="search" matInput formControlName="query" />
+  </mat-form-field>
+</form>
+<div *ngIf="tasks$ | async as tasks">
+  <div class="mat-elevation-z8">
+    <table class="tasks" mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>{{ 'SEARCH-TASKS-PAGE.NUMB' | translate }}</th>
+        <td mat-cell *matCellDef="let element; let i = index">{{ i + 1 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>{{ 'SEARCH-TASKS-PAGE.TITLE' | translate }}</th>
+        <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>{{ 'SEARCH-TASKS-PAGE.DESCRIPTION' | translate }}</th>
+        <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="done">
+        <th mat-header-cell *matHeaderCellDef>{{ 'SEARCH-TASKS-PAGE.DONE' | translate }}</th>
+        <td mat-cell *matCellDef="let element">{{ element.done ? yes : no }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="user">
+        <th mat-header-cell *matHeaderCellDef>{{ 'SEARCH-TASKS-PAGE.USER' | translate }}</th>
+        <td mat-cell *matCellDef="let element">{{ element.user.name }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

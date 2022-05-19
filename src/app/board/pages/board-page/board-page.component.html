@@ -1,0 +1,67 @@
+<div *ngIf="board$ | async as board" class="page-container board-container">
+  <app-notification (confirm)="onErrorConfirm()"></app-notification>
+  <div class="header">
+    <div class="breadcrumbs">
+      <a class="breadcrumb-link" routerLink="/boards">{{ 'BOARD-PAGE.LINK' | translate }}</a>
+      <span>/</span>
+      <span>{{ board.title }}</span>
+    </div>
+    <button mat-stroked-button color="primary" (click)="createColumn()">
+      {{ 'BOARD-PAGE.BUTTONS.CREATE.COLUMN' | translate }}
+    </button>
+  </div>
+  <div
+    class="columns"
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    cdkDropListGroup
+    (cdkDropListDropped)="dropColumn($event)"
+  >
+    <mat-card
+      class="column"
+      cdkDrag
+      [cdkDragStartDelay]="{ touch: 500, mouse: 0 }"
+      *ngFor="let column of board.columns | orderBy: 'order'"
+    >
+      <div class="title">
+        <app-editable-title
+          [content]="column.title"
+          (save)="updateColumn(board.id, column)($event)"
+        ></app-editable-title>
+      </div>
+      <div
+        class="tasks"
+        [attr.data-board-id]="board.id"
+        [attr.data-column-id]="column.id"
+        cdkDropList
+        (cdkDropListDropped)="dropTask($event)"
+      >
+        <mat-card class="task" cdkDrag *ngFor="let task of column.tasks | orderBy: 'order'">
+          <p (click)="selectTask(column.id, task)">{{ task.title }}</p>
+          <button mat-icon-button [matMenuTriggerFor]="taskMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #taskMenu="matMenu">
+            <button mat-menu-item (click)="deleteTask(column.id, task.id, task.title)">
+              <mat-icon color="warn">delete_forever</mat-icon>
+              <span>{{ 'BOARD-PAGE.BUTTONS.DELETE' | translate }}</span>
+            </button>
+          </mat-menu>
+        </mat-card>
+      </div>
+      <mat-card-actions class="actions">
+        <button
+          class="actions-delete"
+          mat-icon-button
+          color="warn"
+          (click)="deleteColumn(column.id, column.title)"
+        >
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+        <button mat-stroked-button color="primary" (click)="createTask(column.id)">
+          {{ 'BOARD-PAGE.BUTTONS.CREATE.TASK' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

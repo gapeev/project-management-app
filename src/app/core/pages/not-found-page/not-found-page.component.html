@@ -1,0 +1,15 @@
+<div class="error-page">
+  <div class="error-page__container">
+    <div class="error-description">
+      <h1>{{ 'ERROR-PAGE.TITLE' | translate }}</h1>
+      <p [innerHTML]="'ERROR-PAGE.TEXT' | translate"></p>
+      <button mat-raised-button color="primary" routerLink="/">
+        {{ 'ERROR-PAGE.BUTTON' | translate }}
+      </button>
+    </div>
+    <div class="error-mark">
+      <p>404</p>
+      <p>{{ 'ERROR-PAGE.ERROR' | translate }}</p>
+    </div>
+  </div>
+</div>

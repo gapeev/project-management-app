@@ -1,0 +1,43 @@
+<app-notification (confirm)="onErrorConfirm()"></app-notification>
+
+<div class="page-container form-container">
+  <form class="form-card" #ngForm="ngForm" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-title>
+        <h2>{{ 'LOGIN-PAGE.TITLE' | translate }}</h2>
+      </mat-card-title>
+      <mat-card-content class="form-content">
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'LOGIN-PAGE.INPUTS.LOGIN' | translate }}</mat-label>
+          <input type="text" matInput formControlName="login" />
+          <mat-error *ngIf="login?.hasError('required')"
+            >{{ 'LOGIN-PAGE.ERROR-TEXT.LOGIN' | translate
+            }}<strong>{{ 'LOGIN-PAGE.REQUIRED' | translate }}</strong></mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{ 'LOGIN-PAGE.INPUTS.PASSWORD' | translate }}</mat-label>
+          <input type="password" matInput formControlName="password" />
+          <mat-error *ngIf="password?.hasError('required')">
+            {{ 'LOGIN-PAGE.ERROR-TEXT.PASSWORD' | translate
+            }}<strong>{{ 'LOGIN-PAGE.REQUIRED' | translate }}</strong>
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions class="form-actions" align="end">
+        <a mat-button routerLink="/auth/sign-up">{{
+          'LOGIN-PAGE.BUTTONS.REGISTRATION' | translate
+        }}</a>
+        <button
+          mat-stroked-button
+          type="submit"
+          color="primary"
+          [disabled]="ngForm.invalid || isSubmitting"
+        >
+          {{ 'LOGIN-PAGE.BUTTONS.LOGIN' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

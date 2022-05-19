@@ -1,0 +1,47 @@
+:host {
+  margin-top: auto;
+}
+
+.footer {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: 100%;
+  &__authors {
+    height: 100%;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    &__link {
+      color: #ffffff;
+      text-decoration: none;
+      transition: all 0.3s;
+      width: fit-content;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__logo {
+    width: 7rem;
+    height: 84%;
+    background-image: url(../../../../assets/svg/logo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: right;
+    transition: all 0.3s;
+  }
+}
+@media (max-width: 680px) {
+  .footer__authors {
+    display: none;
+  }
+}
