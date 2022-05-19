@@ -211,5 +211,11 @@
   "User was not founded!": "Пользователь не найден!",
   "Internal server error": "Произошла непредвиденная ошибка. Повторите попытку позже.",
   "Something went wrong": "Произошла непредвиденная ошибка. Повторите попытку позже.",
-  "Validation failed (uuid is expected)": "Доска не существует."
+  "Validation failed (uuid is expected)": "Доска не существует.",
+  "ERROR-PAGE": {
+    "TITLE": "  Страница не найдена",
+    "TEXT": "Что-то пошло не так. <br />Вы можете вернуться на главную страницу",
+    "BUTTON": "На главную",
+    "ERROR": "Ошибка"
+  }
 }

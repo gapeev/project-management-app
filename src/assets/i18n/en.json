@@ -211,5 +211,11 @@
   "User was not founded!": "User was not founded!",
   "Internal server error": "An unexpected error occurred. Please try again later.",
   "Something went wrong": "An unexpected error occurred. Please try again later.",
-  "Validation failed (uuid is expected)": "The board doesn't exist."
+  "Validation failed (uuid is expected)": "The board doesn't exist.",
+  "ERROR-PAGE": {
+    "TITLE": "Page not found",
+    "TEXT": "Something went wrong. <br> You can go back to the home page",
+    "BUTTON": "Go home",
+    "ERROR": "Error"
+  }
 }
