@@ -1,8 +1,15 @@
 $font: Roboto, 'Helvetica Neue', sans-serif;
 $primary: #3f51b5;
 
-.error-page {
+:host {
+  display: flex;
+  width: 100%;
   height: calc(100vh - 4rem);
+  flex: 1 0 auto;
+}
+
+.error-page {
+  max-height: 100%;
   width: inherit;
 
   &__container {
@@ -17,7 +24,7 @@ $primary: #3f51b5;
     .error-description {
       width: 50%;
       color: $primary;
-      margin-left: 15px;
+      padding: 0.9rem;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -48,6 +55,7 @@ $primary: #3f51b5;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 0.9rem;
 
       p {
         font-size: 80px;
@@ -66,6 +74,9 @@ $primary: #3f51b5;
   .error-page__container {
     flex-direction: column;
     max-width: 100%;
+  }
+  .error-description {
+    padding-top: 3rem !important;
   }
   .error-description,
   .error-mark {
