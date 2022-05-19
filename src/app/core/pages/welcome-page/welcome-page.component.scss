@@ -1,5 +1,6 @@
 $font: Roboto, 'Helvetica Neue', sans-serif;
 $primary: #3f51b5;
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
 .welcome-page {
   height: 100vh;
@@ -32,7 +33,6 @@ $primary: #3f51b5;
         display: table;
         white-space: normal;
       }
-
       .registration-button {
         background: $primary;
         color: white;
@@ -42,10 +42,8 @@ $primary: #3f51b5;
         width: 250px;
       }
     }
-
     .functions {
       display: flex;
-
       .functions-management,
       .functions-settings {
         display: flex;
@@ -74,9 +72,6 @@ $primary: #3f51b5;
     }
   }
 }
-
-@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
-
 .bg {
   animation: slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, #27b6a7 50%, $primary 50%);
